@@ -1,0 +1,8 @@
+sobrenome,nome,segundo_nome,parentesco,idade,pai,mae,fonte,consulta_data
+POMPERMAIER,Cristano,,Chefe,52,POMPERMAIER Cristano,Caterina,Projeto Imigrantes APEES,2026-07-03
+HUELLER,Anna,,Esposa,35,HUELLER Giovanni,FACCHINI Maria,Projeto Imigrantes APEES,2026-07-03
+POMPERMAIER,Giovanni,Cristano,Filho,7,POMPERMAIER Cristano,HUELLER Anna,Projeto Imigrantes APEES,2026-07-03
+POMPERMAIER,Maria,,Filha,5,POMPERMAIER Cristano,HUELLER Anna,Projeto Imigrantes APEES,2026-07-03
+POMPERMAIER,Emilia,Giulia,Filha,3,POMPERMAIER Cristano,HUELLER Anna,Projeto Imigrantes APEES,2026-07-03
+POMPERMAIER,Riccardo,,Filho,1,POMPERMAIER Cristano,HUELLER Anna,Projeto Imigrantes APEES,2026-07-03
+POMPERMAIER,Carlo,Luigi,Filho,9,POMPERMAIER Cristano,HUELLER Anna,Projeto Imigrantes APEES,2026-07-03
