@@ -445,15 +445,14 @@
       font-size: 14px;
     }
 
-    .focus-panel {
+    #salarini-foco {
       background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
+    }
+
+    .focus-panel {
       display: grid;
-      gap: 16px;
-      overflow: hidden;
-      padding: 16px;
+      gap: 20px;
+      min-width: 0;
     }
 
     .focus-header {
@@ -472,6 +471,126 @@
       font-size: 15px;
     }
 
+    .salarini-storyline {
+      display: grid;
+      gap: 12px;
+      position: relative;
+    }
+
+    .salarini-storyline::before {
+      background: linear-gradient(180deg, var(--blue), var(--green));
+      bottom: 24px;
+      content: "";
+      left: 20px;
+      position: absolute;
+      top: 24px;
+      width: 2px;
+    }
+
+    .relation-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: grid;
+      gap: 10px;
+      margin-left: 42px;
+      min-width: 0;
+      padding: 14px;
+      position: relative;
+    }
+
+    .relation-card::before {
+      align-items: center;
+      background: var(--green-dark);
+      border: 3px solid #ffffff;
+      border-radius: 50%;
+      color: #ffffff;
+      content: attr(data-step);
+      display: flex;
+      font-size: 12px;
+      font-weight: 900;
+      height: 34px;
+      justify-content: center;
+      left: -39px;
+      position: absolute;
+      top: 14px;
+      width: 34px;
+    }
+
+    .relation-card.current::before {
+      background: var(--blue);
+    }
+
+    .relation-card h3 {
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .relation-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .relation-meta {
+      display: grid;
+      gap: 8px;
+    }
+
+    .relation-meta div {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      min-width: 0;
+      padding: 9px 10px;
+    }
+
+    .relation-meta strong {
+      color: var(--green-dark);
+      display: block;
+      font-size: 11px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .relation-meta span {
+      color: #33404c;
+      display: block;
+      font-size: 13px;
+      font-weight: 750;
+      margin-top: 2px;
+      overflow-wrap: anywhere;
+    }
+
+    .salarini-history {
+      background: var(--surface-soft);
+      border: 1px solid #cad9cf;
+      border-radius: 8px;
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+    }
+
+    .history-row {
+      display: grid;
+      gap: 7px;
+      grid-template-columns: 58px 1fr;
+      min-width: 0;
+    }
+
+    .history-row time {
+      color: var(--green-dark);
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    .history-row span {
+      color: #3d4a45;
+      font-size: 13px;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
     .salarini-proof {
       border: 1px solid var(--line);
       border-left: 5px solid var(--green);
@@ -486,6 +605,10 @@
 
     .salarini-proof.pending {
       border-left-color: var(--gold);
+    }
+
+    .salarini-proof.gap {
+      border-left-color: var(--red);
     }
 
     .salarini-proof strong {
@@ -503,6 +626,21 @@
 
     .children-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .children-board {
+      display: grid;
+      gap: 12px;
+    }
+
+    .children-board h3 {
+      font-size: 19px;
+      line-height: 1.22;
+    }
+
+    .children-board p {
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .child-chip {
@@ -727,6 +865,14 @@
 
       .children-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .relation-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .salarini-history {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       section {
@@ -956,50 +1102,108 @@
           <div class="focus-panel">
             <div class="focus-header">
               <p class="kicker">Linha Salarini em foco</p>
-              <h2>Carlos + Elvira agora têm quatro apoios independentes</h2>
-              <p>A pergunta deixou de ser se a linha existe. O loop agora procura certidões individuais para cada filho listado na página 118, separando o que já é documento primário do que ainda é roteiro familiar.</p>
+              <h2>Como a linha Salarini chega até você</h2>
+              <p>Esta é a leitura rápida de quem é pai de quem. A linha passa por Ricardo + Justina, chega em Carlos + Elvira, desce para Gervásio, depois Benício, e termina em você.</p>
+            </div>
+
+            <div class="salarini-storyline" aria-label="Linha direta Salarini Pompermayer ate Marcus">
+              <article class="relation-card" data-step="1">
+                <h3>Ricardo Pompermayer + Justina Bressanelli</h3>
+                <p>São seus trisavós paternos neste ramo. A evidência mais forte até agora vem pelo nascimento de José Salarini: o índice civil lista Elvira como filha de Ricardo + Justina.</p>
+                <div class="relation-meta">
+                  <div><strong>Filha direta</strong><span>Elvira Pompermayer</span></div>
+                  <div><strong>Status</strong><span>Confirmado por índice civil; imagem do livro ainda restrita</span></div>
+                </div>
+              </article>
+
+              <article class="relation-card" data-step="2">
+                <h3>Carlos Salarini + Elvira Pompermayer</h3>
+                <p>São seus bisavós paternos pelo ramo Salarini/Pompermayer. Já aparecem sustentados por Gervásio, José, João e Edylio/Idílio; a página 118 abriu o checklist dos demais filhos.</p>
+                <div class="relation-meta">
+                  <div><strong>Filho da sua linha direta</strong><span>Gervásio Salarini, seu avô paterno</span></div>
+                  <div><strong>Outros filhos em busca</strong><span>Aguido, Teresa, Valdemiro, Amélia, Luiz, Ana, Áurea e Dionísio</span></div>
+                </div>
+              </article>
+
+              <article class="relation-card" data-step="3">
+                <h3>Gervásio Salarini + Olendina Thereza Vizzoni</h3>
+                <p>São seus avós paternos. O fichário civil confirma Gervásio como filho de Carlos + Elvira e confirma Benício como filho de Gervásio + Olendina.</p>
+                <div class="relation-meta">
+                  <div><strong>Filho direto</strong><span>Benício Vezzoni Salarini</span></div>
+                  <div><strong>Status</strong><span>Confirmado por certidões civis do fichário</span></div>
+                </div>
+              </article>
+
+              <article class="relation-card" data-step="4">
+                <h3>Benício Vezzoni Salarini</h3>
+                <p>É seu pai e o ponto onde as duas linhas paternas se encontram: Salarini/Pompermayer pelo lado de Gervásio e Vezzoni/Bissa pelo lado de Olendina.</p>
+                <div class="relation-meta">
+                  <div><strong>Pai</strong><span>Marcus Vinicius Santos Salarini</span></div>
+                  <div><strong>Status</strong><span>Confirmado por certidão de nascimento no fichário</span></div>
+                </div>
+              </article>
+
+              <article class="relation-card current" data-step="5">
+                <h3>Marcus Vinicius Santos Salarini</h3>
+                <p>Você está aqui. Para ler a página: Carlos + Elvira são seus bisavós; os outros filhos deles são seus tios-avós paternos; Ricardo + Justina são seus trisavós.</p>
+              </article>
+            </div>
+
+            <div class="salarini-history" aria-label="Linha historica Salarini Pompermayer">
+              <div class="history-row"><time>1874</time><span>Nascimento indicado de Ricardo Pompermayer em Marter/Roncegno, hoje Trentino.</span></div>
+              <div class="history-row"><time>c. 1896</time><span>Casamento de Carlos Salarini + Elvira Pompermayer ainda tratado como pista secundária; registro primário não localizado.</span></div>
+              <div class="history-row"><time>1929</time><span>João Salarini nasce em Vila de Alto Pongal; o óbito de 2007 cita número, folha e livro do nascimento.</span></div>
+              <div class="history-row"><time>1932</time><span>Aguido Salarini aparece em fonte secundária pública como nascido em 21/12/1932 em Iriritiba; FamilySearch filtrado ainda retorna zero.</span></div>
+              <div class="history-row"><time>1935</time><span>José Salarini tem índice civil em Iriritiba que confirma Carlos + Elvira e liga Elvira a Ricardo + Justina.</span></div>
+              <div class="history-row"><time>2026</time><span>Loop atual: separar filhos confirmados, pistas secundárias e próximos pedidos de certidão.</span></div>
             </div>
 
             <div class="salarini-proof-grid" aria-label="Evidencias da linha Salarini">
               <div class="salarini-proof">
-                <strong>Gervasio</strong>
-                <span>Confirmado por certidões civis do fichário: filho de Carlos Salarini e Elvira Pompermayer.</span>
+                <strong>Gervásio</strong>
+                <span>Avô paterno. Confirmado por certidões civis do fichário: filho de Carlos Salarini e Elvira Pompermayer.</span>
               </div>
               <div class="salarini-proof">
                 <strong>José</strong>
-                <span>Índice civil de nascimento de 1935 confirma os pais Carlos + Elvira e ainda liga Elvira a Ricardo + Justina.</span>
+                <span>Tio-avô paterno. Índice civil de nascimento de 1935 confirma os pais Carlos + Elvira e ainda liga Elvira a Ricardo + Justina.</span>
               </div>
               <div class="salarini-proof">
                 <strong>João</strong>
-                <span>Certidão de óbito completa confirma nascimento em Alto Pongal e cita o livro/folha/termo do nascimento.</span>
+                <span>Tio-avô paterno. Certidão de óbito completa confirma nascimento em Alto Pongal e cita o livro/folha/termo do nascimento.</span>
               </div>
               <div class="salarini-proof strong">
                 <strong>Idílio / Edylio</strong>
-                <span>Óbito de 1939 localizado no FamilySearch reforça Carlos + Elvira; falta conferir a imagem original.</span>
+                <span>Tio-avô paterno. Óbito de 1939 localizado no FamilySearch reforça Carlos + Elvira; falta conferir a imagem original.</span>
               </div>
               <div class="salarini-proof pending">
-                <strong>Página 118</strong>
-                <span>Fonte familiar fotografada lista 13 filhos/ramais e virou checklist de busca primária.</span>
+                <strong>Aguido</strong>
+                <span>Tio-avô paterno provável. Página 118 cita Joana Ceccon; fonte pública secundária indica 21/12/1932 em Iriritiba, mas ainda sem certidão.</span>
               </div>
-              <div class="salarini-proof pending">
-                <strong>Próximo alvo</strong>
-                <span>Aguido, Teresa, Valdemiro, Amélia, Luiz, Áurea e Dionísio precisam de certidão própria.</span>
+              <div class="salarini-proof gap">
+                <strong>Gargalo atual</strong>
+                <span>FamilySearch estruturado dá zero para Aguido mesmo com data/local. Melhor caminho: livro civil de Iriritiba ou cartório de Alto Pongal/Anchieta.</span>
               </div>
             </div>
 
-            <div class="children-grid" aria-label="Checklist dos filhos de Carlos Salarini e Elvira Pompermayer">
-              <div class="child-chip confirmed"><div><span>Gervasio</span><small>confirmado</small></div></div>
-              <div class="child-chip confirmed"><div><span>José</span><small>índice civil</small></div></div>
-              <div class="child-chip confirmed"><div><span>João</span><small>óbito completo</small></div></div>
-              <div class="child-chip strong"><div><span>Idílio / Edylio</span><small>óbito parcial</small></div></div>
-              <div class="child-chip pending"><div><span>Aguido</span><small>buscar nascimento</small></div></div>
-              <div class="child-chip pending"><div><span>Teresa</span><small>buscar casamento/óbito</small></div></div>
-              <div class="child-chip pending"><div><span>Valdemiro</span><small>buscar com Venturino</small></div></div>
-              <div class="child-chip pending"><div><span>Amélia</span><small>buscar com Vizzoni</small></div></div>
-              <div class="child-chip pending"><div><span>Luiz</span><small>buscar com Juriato</small></div></div>
-              <div class="child-chip pending"><div><span>Ana</span><small>buscar com Vizzoni</small></div></div>
-              <div class="child-chip pending"><div><span>Áurea</span><small>buscar registro</small></div></div>
-              <div class="child-chip pending"><div><span>Dionísio</span><small>buscar registro</small></div></div>
+            <div class="children-board">
+              <div>
+                <h3>Filhos de Carlos + Elvira: quem são em relação a você</h3>
+                <p>Gervásio é seu avô paterno. Os demais filhos do casal são seus tios-avós paternos e ajudam a provar o casal por registros independentes.</p>
+              </div>
+              <div class="children-grid" aria-label="Checklist dos filhos de Carlos Salarini e Elvira Pompermayer">
+                <div class="child-chip confirmed"><div><span>Gervásio</span><small>seu avô paterno · confirmado</small></div></div>
+                <div class="child-chip confirmed"><div><span>José</span><small>tio-avô · índice civil</small></div></div>
+                <div class="child-chip confirmed"><div><span>João</span><small>tio-avô · óbito completo</small></div></div>
+                <div class="child-chip strong"><div><span>Idílio / Edylio</span><small>tio-avô · óbito parcial</small></div></div>
+                <div class="child-chip pending"><div><span>Aguido</span><small>tio-avô · pista 21/12/1932</small></div></div>
+                <div class="child-chip pending"><div><span>Teresa</span><small>tia-avó · buscar com Gentil Ceccon</small></div></div>
+                <div class="child-chip pending"><div><span>Valdemiro</span><small>tio-avô · buscar com Venturino</small></div></div>
+                <div class="child-chip pending"><div><span>Amélia</span><small>tia-avó · buscar com Vizzoni</small></div></div>
+                <div class="child-chip pending"><div><span>Luiz</span><small>tio-avô · buscar com Juriato</small></div></div>
+                <div class="child-chip pending"><div><span>Ana</span><small>tia-avó · buscar com Vizzoni</small></div></div>
+                <div class="child-chip pending"><div><span>Áurea</span><small>tia-avó · buscar registro</small></div></div>
+                <div class="child-chip pending"><div><span>Dionísio</span><small>tio-avô · buscar registro</small></div></div>
+              </div>
             </div>
           </div>
         </div>
@@ -1225,7 +1429,7 @@
                 <img src="BR-007/2026-07-03_livro-familia-pompermayer-p118_elvira-carlos-salarini.jpg" alt="Pagina 118 do livro familiar Pompermayer mostrando Ricardo e Justina, Elvira e Carlos Salarini, e descendentes">
               </figure>
               <div class="evidence-body">
-                <p class="eyebrow">BR-007 Â· Livro/fotos da familia Â· 2026-07-03</p>
+                <p class="eyebrow">BR-007 · Livro/fotos da familia · 2026-07-03</p>
                 <h3>Pagina 118 abre o checklist dos filhos Salarini</h3>
                 <p>A foto local mostra Ricardo (1874) + Justina Bressanelli levando a Elvira + Carlos Salarini e lista filhos/ramais como Luiz, Idilio, Gervasio, Ana, Valdemiro, Amelia, Joao, Aguido, Jose, Teresa, Aurea e Dionisio. E fonte familiar secundaria, usada como roteiro para buscar certidoes primarias.</p>
                 <div class="links">
@@ -1236,11 +1440,22 @@
 
             <article class="evidence-card">
               <div class="evidence-body">
-                <p class="eyebrow">BR-008 Â· FamilySearch Â· resultado negativo util</p>
+                <p class="eyebrow">BR-008 · FamilySearch · resultado negativo util</p>
                 <h3>Busca por filhos de Carlos + Elvira mostrou o gargalo</h3>
                 <p>No FamilySearch, a consulta por pai Carlos Salarini + mae Elvira Pompermayer retornou apenas Joao Salarini. Buscas por Aguido/Jose com local e data tambem falharam, inclusive para Jose, cujo ARK ja conhecemos. O proximo caminho e navegar o livro civil ou pedir certidao ao cartorio.</p>
                 <div class="links">
                   <a class="button-link secondary" href="BR-008/2026-07-03_familysearch_busca-filhos-carlos-elvira.md">Ver busca</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="evidence-card">
+              <div class="evidence-body">
+                <p class="eyebrow">BR-009 · busca web + FamilySearch · 2026-07-03</p>
+                <h3>Aguido ganhou uma data-alvo, mas ainda sem prova primária</h3>
+                <p>Fonte pública secundária repete Aguido Salarini nascido em 21/12/1932 em Iriritiba/Anchieta. Teste logado no FamilySearch com essa data e local retornou 0 resultados; busca ampla por Aguido Salarini trouxe 1.198 resultados sem Aguido visível no topo. A data agora guia o livro civil, mas não entra como fato confirmado.</p>
+                <div class="links">
+                  <a class="button-link secondary" href="BR-009/2026-07-03_web-familysearch_aguido-salarini-data-alvo.md">Ver busca</a>
                 </div>
               </div>
             </article>
