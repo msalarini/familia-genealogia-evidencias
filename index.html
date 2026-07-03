@@ -324,7 +324,9 @@
 
     .evidence-grid,
     .confidence-grid,
-    .next-grid {
+    .next-grid,
+    .salarini-proof-grid,
+    .children-grid {
       display: grid;
       gap: 14px;
       min-width: 0;
@@ -441,6 +443,116 @@
     .callout p {
       color: #3d4a45;
       font-size: 14px;
+    }
+
+    .focus-panel {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 16px;
+      overflow: hidden;
+      padding: 16px;
+    }
+
+    .focus-header {
+      display: grid;
+      gap: 8px;
+    }
+
+    .focus-header h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .focus-header p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .salarini-proof {
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--green);
+      border-radius: 8px;
+      min-width: 0;
+      padding: 13px;
+    }
+
+    .salarini-proof.strong {
+      border-left-color: var(--blue);
+    }
+
+    .salarini-proof.pending {
+      border-left-color: var(--gold);
+    }
+
+    .salarini-proof strong {
+      display: block;
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    .salarini-proof span {
+      color: var(--muted);
+      display: block;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .children-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .child-chip {
+      align-items: center;
+      background: #f8faf8;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: flex;
+      gap: 8px;
+      min-height: 46px;
+      min-width: 0;
+      padding: 9px 10px;
+    }
+
+    .child-chip::before {
+      border-radius: 50%;
+      content: "";
+      flex: 0 0 10px;
+      height: 10px;
+      width: 10px;
+    }
+
+    .child-chip.confirmed::before {
+      background: var(--green);
+    }
+
+    .child-chip.strong::before {
+      background: var(--blue);
+    }
+
+    .child-chip.pending::before {
+      background: var(--gold);
+    }
+
+    .child-chip span {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.2;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .child-chip small {
+      color: var(--muted);
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-top: 2px;
     }
 
     .tree-wrap {
@@ -613,6 +725,10 @@
         grid-template-columns: repeat(4, 1fr);
       }
 
+      .children-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
       section {
         padding-bottom: 52px;
         padding-top: 52px;
@@ -659,7 +775,8 @@
       }
 
       .confidence-grid,
-      .next-grid {
+      .next-grid,
+      .salarini-proof-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
@@ -675,7 +792,7 @@
       <div class="hero-inner">
         <p class="kicker">Memoria genealogica em construcao</p>
         <h1>Arvore paterna: Pompermayer &amp; <wbr>Vezzoni</h1>
-        <p class="hero-subtitle">Uma pagina mobile-first para acompanhar as duas linhas da arvore paterna - a do avo (Salarini/Pompermayer) e a da avo (Vezzoni/Bissa) - com as provas ja reunidas e as lacunas que ainda precisam de documento primario.</p>
+        <p class="hero-subtitle">Uma pagina mobile-first para acompanhar as duas linhas da arvore paterna. A linha Salarini/Pompermayer ganhou um painel proprio: Carlos + Elvira ja estao sustentados por registros de Gervasio, Jose, Joao e Edylio, e a pagina 118 virou checklist dos filhos ainda sem certidao.</p>
 
         <div class="hero-meta" aria-label="Resumo da pesquisa">
           <div class="stat-row">
@@ -697,7 +814,7 @@
             </div>
           </div>
           <div class="status-strip">
-            <strong>Resumo atual: em 2026-07-03, a linha Vezzoni/Bissa (avo paterna) ganhou certidao de casamento e registro de imigracao confirmados, e a linha Pompermayer (avo paterno) teve a filiacao de Elvira confirmada por registro civil - a antiga lacuna critica da pesquisa. Falta agora conseguir as imagens completas dos documentos, restritas mesmo com login.</strong>
+            <strong>Resumo atual: a linha Salarini/Pompermayer nao esta mais no escuro. Elvira foi ligada a Ricardo + Justina por indice civil, Joao tem certidao completa, Edylio tem obito localizado e a pagina 118 abriu a lista de filhos para novas certidoes.</strong>
             <span>Fonte-base: memoria_genealogica_pompermayer_COMPLETA.md, evidencias IT-001 a IT-004, VZ-001, VZ-002 e certidoes/relatorios ja descritos na pesquisa.</span>
           </div>
         </div>
@@ -707,6 +824,7 @@
     <nav class="nav" aria-label="Navegacao da pagina">
       <div class="nav-inner">
         <a href="#arvore">Arvore</a>
+        <a href="#salarini-foco">Salarini</a>
         <a href="#linha">Linha do avo</a>
         <a href="#vezzoni">Linha da avo</a>
         <a href="#evidencias">Evidencias</a>
@@ -830,6 +948,60 @@
           </div>
 
           <p class="tree-note">A linha da avo (Vezzoni/Bissa) so entrou na pesquisa em 2026-07-03 e ja alcancou o mesmo nivel de confianca da linha do avo em varios elos. Bissa/Libardi (bisavos maternos de Olendina) ainda nao tem origem italiana confirmada e por isso nao aparecem neste resumo; veja a secao "Linha da avo" abaixo.</p>
+        </div>
+      </section>
+
+      <section id="salarini-foco">
+        <div class="section-inner">
+          <div class="focus-panel">
+            <div class="focus-header">
+              <p class="kicker">Linha Salarini em foco</p>
+              <h2>Carlos + Elvira agora têm quatro apoios independentes</h2>
+              <p>A pergunta deixou de ser se a linha existe. O loop agora procura certidões individuais para cada filho listado na página 118, separando o que já é documento primário do que ainda é roteiro familiar.</p>
+            </div>
+
+            <div class="salarini-proof-grid" aria-label="Evidencias da linha Salarini">
+              <div class="salarini-proof">
+                <strong>Gervasio</strong>
+                <span>Confirmado por certidões civis do fichário: filho de Carlos Salarini e Elvira Pompermayer.</span>
+              </div>
+              <div class="salarini-proof">
+                <strong>José</strong>
+                <span>Índice civil de nascimento de 1935 confirma os pais Carlos + Elvira e ainda liga Elvira a Ricardo + Justina.</span>
+              </div>
+              <div class="salarini-proof">
+                <strong>João</strong>
+                <span>Certidão de óbito completa confirma nascimento em Alto Pongal e cita o livro/folha/termo do nascimento.</span>
+              </div>
+              <div class="salarini-proof strong">
+                <strong>Idílio / Edylio</strong>
+                <span>Óbito de 1939 localizado no FamilySearch reforça Carlos + Elvira; falta conferir a imagem original.</span>
+              </div>
+              <div class="salarini-proof pending">
+                <strong>Página 118</strong>
+                <span>Fonte familiar fotografada lista 13 filhos/ramais e virou checklist de busca primária.</span>
+              </div>
+              <div class="salarini-proof pending">
+                <strong>Próximo alvo</strong>
+                <span>Aguido, Teresa, Valdemiro, Amélia, Luiz, Áurea e Dionísio precisam de certidão própria.</span>
+              </div>
+            </div>
+
+            <div class="children-grid" aria-label="Checklist dos filhos de Carlos Salarini e Elvira Pompermayer">
+              <div class="child-chip confirmed"><div><span>Gervasio</span><small>confirmado</small></div></div>
+              <div class="child-chip confirmed"><div><span>José</span><small>índice civil</small></div></div>
+              <div class="child-chip confirmed"><div><span>João</span><small>óbito completo</small></div></div>
+              <div class="child-chip strong"><div><span>Idílio / Edylio</span><small>óbito parcial</small></div></div>
+              <div class="child-chip pending"><div><span>Aguido</span><small>buscar nascimento</small></div></div>
+              <div class="child-chip pending"><div><span>Teresa</span><small>buscar casamento/óbito</small></div></div>
+              <div class="child-chip pending"><div><span>Valdemiro</span><small>buscar com Venturino</small></div></div>
+              <div class="child-chip pending"><div><span>Amélia</span><small>buscar com Vizzoni</small></div></div>
+              <div class="child-chip pending"><div><span>Luiz</span><small>buscar com Juriato</small></div></div>
+              <div class="child-chip pending"><div><span>Ana</span><small>buscar com Vizzoni</small></div></div>
+              <div class="child-chip pending"><div><span>Áurea</span><small>buscar registro</small></div></div>
+              <div class="child-chip pending"><div><span>Dionísio</span><small>buscar registro</small></div></div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1058,6 +1230,17 @@
                 <p>A foto local mostra Ricardo (1874) + Justina Bressanelli levando a Elvira + Carlos Salarini e lista filhos/ramais como Luiz, Idilio, Gervasio, Ana, Valdemiro, Amelia, Joao, Aguido, Jose, Teresa, Aurea e Dionisio. E fonte familiar secundaria, usada como roteiro para buscar certidoes primarias.</p>
                 <div class="links">
                   <a class="button-link" href="BR-007/2026-07-03_livro-familia-pompermayer-p118_elvira-carlos-salarini.md">Ver resumo</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="evidence-card">
+              <div class="evidence-body">
+                <p class="eyebrow">BR-008 Â· FamilySearch Â· resultado negativo util</p>
+                <h3>Busca por filhos de Carlos + Elvira mostrou o gargalo</h3>
+                <p>No FamilySearch, a consulta por pai Carlos Salarini + mae Elvira Pompermayer retornou apenas Joao Salarini. Buscas por Aguido/Jose com local e data tambem falharam, inclusive para Jose, cujo ARK ja conhecemos. O proximo caminho e navegar o livro civil ou pedir certidao ao cartorio.</p>
+                <div class="links">
+                  <a class="button-link secondary" href="BR-008/2026-07-03_familysearch_busca-filhos-carlos-elvira.md">Ver busca</a>
                 </div>
               </div>
             </article>
