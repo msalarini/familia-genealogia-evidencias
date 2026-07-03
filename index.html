@@ -729,6 +729,11 @@
       stroke: var(--blue);
     }
 
+    .tree-link.uncertain {
+      stroke: var(--gold);
+      stroke-dasharray: 4 3;
+    }
+
     .tree-node rect {
       fill: var(--surface);
       stroke-width: 2;
@@ -757,6 +762,11 @@
 
     .tree-node.strong rect {
       stroke: var(--blue);
+    }
+
+    .tree-node.pending rect {
+      stroke: var(--gold);
+      stroke-dasharray: 5 3;
     }
 
     .tree-node.root rect {
@@ -796,6 +806,10 @@
       fill: var(--blue);
     }
 
+    .tree-node.pending .tree-tag {
+      fill: #765013;
+    }
+
     .legend-swatch.confirmed {
       fill: #e4f1e9;
       stroke: var(--green);
@@ -804,6 +818,12 @@
     .legend-swatch.strong {
       fill: #eef3fb;
       stroke: var(--blue);
+    }
+
+    .legend-swatch.pending {
+      fill: #fff3d8;
+      stroke: var(--gold);
+      stroke-dasharray: 3 2;
     }
 
     .legend-swatch {
@@ -1125,6 +1145,72 @@
               <h2>Como a linha Salarini chega até você</h2>
               <p>Esta é a leitura rápida de quem é pai de quem. A linha passa por Ricardo + Justina, chega em Carlos + Elvira, desce para Gervásio, depois Benício, e termina em você.</p>
             </div>
+
+            <div class="focus-header">
+              <p class="kicker">Novidade de 2026-07-03</p>
+              <h2>De onde vem o sobrenome Salarini</h2>
+              <p>Até agora, a "linha do avô" só tinha sido pesquisada pelo lado da Elvira Pompermayer. Os pais e avós do próprio Carlos Salarini nunca tinham sido investigados - ou seja, faltava a origem do sobrenome que você carrega. Isso mudou: o pai de Carlos, Giovanni Salarini, veio de Felonica, na província de Mantova, região da Lombardia, na Itália.</p>
+            </div>
+
+            <div class="tree-wrap">
+              <svg viewBox="0 0 380 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama da ascendencia de Carlos Salarini, de Felonica na Italia ate Gervasio Salarini">
+                <line x1="190" y1="76" x2="190" y2="100" class="tree-link strong"/>
+                <line x1="190" y1="166" x2="115" y2="190" class="tree-link strong"/>
+                <line x1="190" y1="166" x2="265" y2="190" class="tree-link strong"/>
+                <line x1="115" y1="250" x2="190" y2="290" class="tree-link uncertain"/>
+                <line x1="265" y1="250" x2="190" y2="290" class="tree-link uncertain"/>
+                <line x1="190" y1="350" x2="190" y2="374" class="tree-link confirmed"/>
+
+                <g class="tree-node strong">
+                  <rect x="40" y="10" width="300" height="66" rx="8"/>
+                  <text x="190" y="30" text-anchor="middle" class="tree-name">Angelo Salarini</text>
+                  <text x="190" y="45" text-anchor="middle" class="tree-name">+ Margherita Moreschi</text>
+                  <text x="190" y="61" text-anchor="middle" class="tree-caption">Felonica, Mantova, Italia</text>
+                  <text x="190" y="72" text-anchor="middle" class="tree-tag">Pista forte</text>
+                </g>
+
+                <g class="tree-node strong">
+                  <rect x="40" y="100" width="300" height="66" rx="8"/>
+                  <text x="190" y="122" text-anchor="middle" class="tree-name">Giovanni Salarini</text>
+                  <text x="190" y="138" text-anchor="middle" class="tree-caption">n. ~1850, Felonica &#8594; Alfredo Chaves-ES</text>
+                  <text x="190" y="155" text-anchor="middle" class="tree-tag">Pista forte</text>
+                </g>
+
+                <g class="tree-node pending">
+                  <rect x="40" y="190" width="150" height="60" rx="8"/>
+                  <text x="115" y="212" text-anchor="middle" class="tree-name">Elena Bassi</text>
+                  <text x="115" y="227" text-anchor="middle" class="tree-caption">1a esposa, 1874</text>
+                  <text x="115" y="242" text-anchor="middle" class="tree-tag">Provavel falecida ate 1880</text>
+                </g>
+
+                <g class="tree-node strong">
+                  <rect x="190" y="190" width="150" height="60" rx="8"/>
+                  <text x="265" y="212" text-anchor="middle" class="tree-name">Teresa Negri</text>
+                  <text x="265" y="227" text-anchor="middle" class="tree-caption">2a esposa, 1880</text>
+                  <text x="265" y="242" text-anchor="middle" class="tree-tag">Pista forte</text>
+                </g>
+
+                <g class="tree-node confirmed">
+                  <rect x="40" y="290" width="300" height="60" rx="8"/>
+                  <text x="190" y="310" text-anchor="middle" class="tree-name">Carlos Salarini + Elvira Pompermayer</text>
+                  <text x="190" y="325" text-anchor="middle" class="tree-caption">mae de Carlos ainda a confirmar</text>
+                  <text x="190" y="341" text-anchor="middle" class="tree-tag">Casamento confirmado (1896)</text>
+                </g>
+
+                <g class="tree-node confirmed">
+                  <rect x="90" y="374" width="200" height="56" rx="8"/>
+                  <text x="190" y="396" text-anchor="middle" class="tree-name">Gervásio Salarini</text>
+                  <text x="190" y="411" text-anchor="middle" class="tree-caption">avô paterno</text>
+                  <text x="190" y="423" text-anchor="middle" class="tree-tag">Confirmada</text>
+                </g>
+
+                <g class="tree-legend">
+                  <rect x="40" y="440" width="12" height="12" rx="3" class="legend-swatch pending"/>
+                  <text x="58" y="450" class="tree-caption">Divergencia a resolver (SA-002)</text>
+                </g>
+              </svg>
+            </div>
+            <p class="tree-note">Giovanni Salarini casou duas vezes em Felonica antes de emigrar. A árvore atribui Carlos e os irmãos mais novos (nascidos já em Alfredo Chaves-ES) à segunda esposa, Teresa Negri, mas o ano de nascimento hoje registrado para Carlos (~1875) é anterior a esse segundo casamento (1880) e não tem fonte - por isso a filiação exata de Carlos ainda está em aberto.</p>
 
             <div class="salarini-storyline" aria-label="Linha direta Salarini Pompermayer ate Marcus">
               <article class="relation-card" data-step="1">
