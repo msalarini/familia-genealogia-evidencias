@@ -353,6 +353,40 @@
       width: 100%;
     }
 
+    .document-card figure img,
+    .document-strip img {
+      min-width: 0;
+    }
+
+    .document-strip {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 14px;
+    }
+
+    .document-strip a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .document-strip img {
+      aspect-ratio: 3 / 4;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      object-fit: cover;
+      object-position: top;
+      width: 100%;
+    }
+
+    .document-strip span {
+      color: #31404e;
+      display: block;
+      font-size: 12px;
+      font-weight: 750;
+      padding-top: 6px;
+    }
+
     .evidence-body,
     .confidence-card,
     .next-card {
@@ -560,6 +594,10 @@
       .evidence-card.featured {
         grid-column: 1 / -1;
       }
+
+      .document-strip {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
     }
   </style>
 </head>
@@ -592,7 +630,7 @@
           </div>
           <div class="status-strip">
             <strong>Resumo atual: a linha italiana ganhou pistas fortes para Cristano Francesco, o grupo Cristano + Anna/Hueller e Ricardo; a ponte Elvira -> Ricardo ainda precisa de fonte primaria.</strong>
-            <span>Fonte-base: memoria_genealogica_pompermayer_COMPLETA.md, evidencias IT-001, IT-002, IT-003, IT-004 e resumo privado DOC-001/Fichario3.pdf.</span>
+            <span>Fonte-base: memoria_genealogica_pompermayer_COMPLETA.md, evidencias IT-001, IT-002, IT-003, IT-004 e DOC-001/Fichario3.pdf publicado.</span>
           </div>
         </div>
       </div>
@@ -693,11 +731,29 @@
               </div>
             </article>
 
-            <article class="evidence-card">
+            <article class="evidence-card document-card featured">
+              <figure>
+                <a href="DOC-001/pages/fichario3-page-3.jpg">
+                  <img loading="lazy" src="DOC-001/pages/fichario3-page-3.jpg" alt="Certidao de casamento de Gervasio Salarini e Olendina Thereza Vizzoni, com filiacao de Gervasio como filho de Carlos Salarini e Elvira Pompermayer">
+                </a>
+              </figure>
               <div class="evidence-body">
-                <p class="eyebrow">DOC-001 - Fonte privada localizada</p>
+                <p class="eyebrow">DOC-001 - Fichario3.pdf publicado</p>
                 <h3>Certidoes brasileiras sustentam a linha Salarini</h3>
-                <p>O Fichario3.pdf foi localizado no repositorio privado. As certidoes revisadas sustentam Carlos + Elvira -> Gervasio -> Benicio; as imagens completas nao foram publicadas aqui por conterem certidoes de inteiro teor.</p>
+                <p>O PDF completo e as cinco paginas em imagem estao publicados aqui como evidencia visual. A pagina 3 confirma Gervasio Salarini como filho de Carlos Salarini e Elvira Pompermayer; a pagina 4 confirma Benicio como filho de Gervasio e Olendina.</p>
+                <div class="links">
+                  <a class="button-link" href="DOC-001/fichario3.pdf">Abrir PDF completo</a>
+                  <a class="button-link secondary" href="DOC-001/2026-07-03_fichario3_certidoes-civis.md">Ver resumo tecnico</a>
+                  <a class="button-link secondary" href="BR-003/2026-07-03_batismos-anchieta_txt-varredura-pompermayer-salarini.md">Ver varredura BR-003</a>
+                  <a class="button-link secondary" href="BR-003/BatismosAnchieta-UNIFICADO_10669_1861-1896.txt">Abrir TXT de batismos</a>
+                </div>
+                <div class="document-strip" aria-label="Paginas do Fichario3.pdf">
+                  <a href="DOC-001/pages/fichario3-page-1.jpg"><img loading="lazy" src="DOC-001/pages/fichario3-page-1.jpg" alt="Pagina 1 do Fichario3.pdf, obito de Stefano Vezzoni"><span>Pagina 1 - obito Stefano</span></a>
+                  <a href="DOC-001/pages/fichario3-page-2.jpg"><img loading="lazy" src="DOC-001/pages/fichario3-page-2.jpg" alt="Pagina 2 do Fichario3.pdf, nascimento de Olendina Thereza Vizzoni"><span>Pagina 2 - Olendina</span></a>
+                  <a href="DOC-001/pages/fichario3-page-3.jpg"><img loading="lazy" src="DOC-001/pages/fichario3-page-3.jpg" alt="Pagina 3 do Fichario3.pdf, casamento de Gervasio Salarini e Olendina"><span>Pagina 3 - casamento</span></a>
+                  <a href="DOC-001/pages/fichario3-page-4.jpg"><img loading="lazy" src="DOC-001/pages/fichario3-page-4.jpg" alt="Pagina 4 do Fichario3.pdf, nascimento de Benicio Vezzoni Salarini"><span>Pagina 4 - Benicio</span></a>
+                  <a href="DOC-001/pages/fichario3-page-5.jpg"><img loading="lazy" src="DOC-001/pages/fichario3-page-5.jpg" alt="Pagina 5 do Fichario3.pdf, obito de Stefano Vezzoni"><span>Pagina 5 - obito</span></a>
+                </div>
               </div>
             </article>
 
@@ -751,7 +807,7 @@
             <article class="confidence-card">
               <p class="eyebrow">Confirmado</p>
               <h3>Benicio -> Gervasio + Olendina</h3>
-              <p>Base: certidao de nascimento de Benicio no Fichario3.pdf, mantido no repositorio privado.</p>
+              <p>Base: certidao de nascimento de Benicio no Fichario3.pdf, agora publicada na pagina de evidencias.</p>
             </article>
 
             <article class="confidence-card">
@@ -845,7 +901,7 @@
             <article class="next-card">
               <p class="eyebrow">Metodo</p>
               <h3>Salvar melhor evidencia possivel</h3>
-              <p>Quando houver imagem original do livro, salvar a imagem. Para certidoes privadas, guardar no repositorio privado e publicar aqui apenas resumo aprovado.</p>
+              <p>Quando houver imagem original do livro ou certidao autorizada, salvar a melhor imagem possivel, publicar o arquivo-fonte e manter resumo tecnico.</p>
             </article>
 
             <article class="next-card">
