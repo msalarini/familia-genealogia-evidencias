@@ -709,6 +709,12 @@
       width: 100%;
     }
 
+    .tree-wrap-large svg {
+      min-width: 720px;
+      max-width: 790px;
+      width: 100%;
+    }
+
     .tree-col-label {
       fill: var(--muted);
       font-size: 11px;
@@ -769,6 +775,16 @@
       stroke-dasharray: 5 3;
     }
 
+    .tree-node.gap rect {
+      stroke: var(--red);
+      stroke-dasharray: 5 3;
+    }
+
+    .tree-link.gap {
+      stroke: var(--red);
+      stroke-dasharray: 4 3;
+    }
+
     .tree-node.root rect {
       fill: var(--green-dark);
       stroke: var(--green-dark);
@@ -810,6 +826,10 @@
       fill: #765013;
     }
 
+    .tree-node.gap .tree-tag {
+      fill: var(--red);
+    }
+
     .legend-swatch.confirmed {
       fill: #e4f1e9;
       stroke: var(--green);
@@ -823,6 +843,12 @@
     .legend-swatch.pending {
       fill: #fff3d8;
       stroke: var(--gold);
+      stroke-dasharray: 3 2;
+    }
+
+    .legend-swatch.gap {
+      fill: #f8e7e8;
+      stroke: var(--red);
       stroke-dasharray: 3 2;
     }
 
@@ -1024,116 +1050,159 @@
             <p>As duas linhas paternas, da Italia ate voce, em um so diagrama. Role para baixo para ver os detalhes e as evidencias de cada elo.</p>
           </div>
 
-          <div class="tree-wrap">
-            <svg viewBox="0 0 380 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama da arvore genealogica paterna, da Italia ate Marcus Vinicius Santos Salarini">
-              <text x="93" y="20" class="tree-col-label" text-anchor="middle">Linha do avo</text>
-              <text x="287" y="20" class="tree-col-label" text-anchor="middle">Linha da avo</text>
+          <div class="tree-wrap tree-wrap-large">
+            <svg viewBox="0 0 790 610" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama completo da arvore genealogica de Marcus Vinicius Santos Salarini, com as quatro linhas de bisavos ate a Italia">
+              <text x="95" y="102" class="tree-col-label" text-anchor="middle">Salarini</text>
+              <text x="285" y="102" class="tree-col-label" text-anchor="middle">Pompermayer</text>
+              <text x="475" y="102" class="tree-col-label" text-anchor="middle">Vezzoni</text>
+              <text x="665" y="102" class="tree-col-label" text-anchor="middle">Bissa</text>
 
-              <!-- linhas verticais dentro de cada coluna -->
-              <line x1="93" y1="98" x2="93" y2="128" class="tree-link strong"/>
-              <line x1="93" y1="202" x2="93" y2="232" class="tree-link strong"/>
-              <line x1="93" y1="306" x2="93" y2="336" class="tree-link confirmed"/>
+              <!-- Geracao 5 -> Geracao 4, dentro de cada coluna -->
+              <line x1="95" y1="84" x2="95" y2="108" class="tree-link strong"/>
+              <line x1="285" y1="84" x2="285" y2="108" class="tree-link strong"/>
+              <line x1="475" y1="84" x2="475" y2="108" class="tree-link strong"/>
+              <line x1="665" y1="84" x2="665" y2="108" class="tree-link gap"/>
 
-              <line x1="287" y1="98" x2="287" y2="128" class="tree-link strong"/>
-              <line x1="287" y1="202" x2="287" y2="232" class="tree-link confirmed"/>
-              <line x1="287" y1="306" x2="287" y2="336" class="tree-link confirmed"/>
+              <!-- Geracao 4 -> Geracao 3 (convergencia para os dois casais bisavos) -->
+              <line x1="95" y1="182" x2="190" y2="206" class="tree-link strong"/>
+              <line x1="285" y1="182" x2="190" y2="206" class="tree-link strong"/>
+              <line x1="475" y1="182" x2="570" y2="206" class="tree-link confirmed"/>
+              <line x1="665" y1="182" x2="570" y2="206" class="tree-link confirmed"/>
 
-              <!-- convergencia para Benicio -->
-              <line x1="93" y1="410" x2="190" y2="450" class="tree-link confirmed"/>
-              <line x1="287" y1="410" x2="190" y2="450" class="tree-link confirmed"/>
+              <!-- Geracao 3 -> Geracao 2 (avo e avo) -->
+              <line x1="190" y1="280" x2="190" y2="304" class="tree-link confirmed"/>
+              <line x1="570" y1="280" x2="570" y2="304" class="tree-link confirmed"/>
 
-              <!-- Benicio para Marcus -->
-              <line x1="190" y1="510" x2="190" y2="540" class="tree-link confirmed"/>
+              <!-- Geracao 2 -> Benicio -->
+              <line x1="190" y1="378" x2="380" y2="402" class="tree-link confirmed"/>
+              <line x1="570" y1="378" x2="380" y2="402" class="tree-link confirmed"/>
 
-              <!-- Coluna esquerda: avo paterno -->
+              <!-- Benicio -> Marcus -->
+              <line x1="380" y1="462" x2="380" y2="486" class="tree-link confirmed"/>
+
+              <!-- GERACAO 5: tetravos -->
               <g class="tree-node strong">
-                <rect x="10" y="24" width="166" height="74" rx="8"/>
-                <text x="93" y="46" text-anchor="middle" class="tree-name">Cristano Pompermayer</text>
-                <text x="93" y="61" text-anchor="middle" class="tree-name">+ Anna Hueller</text>
-                <text x="93" y="78" text-anchor="middle" class="tree-caption">Roncegno / Marter, Italia</text>
-                <text x="93" y="91" text-anchor="middle" class="tree-tag">Pista forte</text>
+                <rect x="10" y="10" width="170" height="74" rx="8"/>
+                <text x="95" y="32" text-anchor="middle" class="tree-name">Angelo Salarini</text>
+                <text x="95" y="47" text-anchor="middle" class="tree-name">+ Margherita Moreschi</text>
+                <text x="95" y="64" text-anchor="middle" class="tree-caption">Felonica, Mantova, Italia</text>
+                <text x="95" y="77" text-anchor="middle" class="tree-tag">Pista forte</text>
               </g>
 
               <g class="tree-node strong">
-                <rect x="10" y="128" width="166" height="74" rx="8"/>
-                <text x="93" y="154" text-anchor="middle" class="tree-name">Ricardo Pompermayer</text>
-                <text x="93" y="169" text-anchor="middle" class="tree-name">+ Justina Bressanelli</text>
-                <text x="93" y="187" text-anchor="middle" class="tree-tag">Pista forte</text>
+                <rect x="200" y="10" width="170" height="74" rx="8"/>
+                <text x="285" y="32" text-anchor="middle" class="tree-name">Cristano Pompermayer</text>
+                <text x="285" y="47" text-anchor="middle" class="tree-name">+ Anna Hueller</text>
+                <text x="285" y="64" text-anchor="middle" class="tree-caption">Roncegno / Marter, Italia</text>
+                <text x="285" y="77" text-anchor="middle" class="tree-tag">Pista forte</text>
               </g>
 
+              <g class="tree-node strong">
+                <rect x="390" y="10" width="170" height="74" rx="8"/>
+                <text x="475" y="32" text-anchor="middle" class="tree-name">Giacomo C. Vezzoni</text>
+                <text x="475" y="47" text-anchor="middle" class="tree-name">+ Rosa Maria Barili</text>
+                <text x="475" y="64" text-anchor="middle" class="tree-caption">Gussola, Cremona, Italia</text>
+                <text x="475" y="77" text-anchor="middle" class="tree-tag">Pista forte</text>
+              </g>
+
+              <g class="tree-node gap">
+                <rect x="580" y="10" width="170" height="74" rx="8" stroke-dasharray="5 3"/>
+                <text x="665" y="32" text-anchor="middle" class="tree-name">Origem de Estefano</text>
+                <text x="665" y="47" text-anchor="middle" class="tree-name">Bissa + Maria Libardi</text>
+                <text x="665" y="64" text-anchor="middle" class="tree-caption">Italia, regiao ainda incerta</text>
+                <text x="665" y="77" text-anchor="middle" class="tree-tag">Lacuna (VZ-003)</text>
+              </g>
+
+              <!-- GERACAO 4: trisavos -->
+              <g class="tree-node strong">
+                <rect x="10" y="108" width="170" height="74" rx="8"/>
+                <text x="95" y="130" text-anchor="middle" class="tree-name">Giovanni Salarini</text>
+                <text x="95" y="145" text-anchor="middle" class="tree-name">+ Teresa Negri (?)</text>
+                <text x="95" y="162" text-anchor="middle" class="tree-caption">Felonica &#8594; Alfredo Chaves-ES</text>
+                <text x="95" y="175" text-anchor="middle" class="tree-tag">Pista forte</text>
+              </g>
+
+              <g class="tree-node strong">
+                <rect x="200" y="108" width="170" height="74" rx="8"/>
+                <text x="285" y="130" text-anchor="middle" class="tree-name">Ricardo Pompermayer</text>
+                <text x="285" y="145" text-anchor="middle" class="tree-name">+ Justina Bressanelli</text>
+                <text x="285" y="175" text-anchor="middle" class="tree-tag">Pista forte</text>
+              </g>
+
+              <g class="tree-node confirmed">
+                <rect x="390" y="108" width="170" height="74" rx="8"/>
+                <text x="475" y="130" text-anchor="middle" class="tree-name">Vincenzo Vezzoni</text>
+                <text x="475" y="145" text-anchor="middle" class="tree-name">+ Luigia Orsola Cetto</text>
+                <text x="475" y="175" text-anchor="middle" class="tree-tag">Confirmada</text>
+              </g>
+
+              <g class="tree-node confirmed">
+                <rect x="580" y="108" width="170" height="74" rx="8"/>
+                <text x="665" y="130" text-anchor="middle" class="tree-name">Estefano Bissa</text>
+                <text x="665" y="145" text-anchor="middle" class="tree-name">+ Maria Libardi</text>
+                <text x="665" y="175" text-anchor="middle" class="tree-tag">Confirmada</text>
+              </g>
+
+              <!-- GERACAO 3: bisavos, casais convergidos -->
               <a href="#salarini-foco" class="tree-link-node" aria-label="Ver o painel completo da linha Salarini, com os 12 filhos de Carlos e Elvira">
                 <g class="tree-node confirmed">
-                  <rect x="10" y="232" width="166" height="74" rx="8"/>
-                  <text x="93" y="254" text-anchor="middle" class="tree-name">Carlos Salarini</text>
-                  <text x="93" y="269" text-anchor="middle" class="tree-name">+ Elvira Pompermayer</text>
-                  <text x="93" y="286" text-anchor="middle" class="tree-caption">12 filhos (pag. 118): 4 confirmados</text>
-                  <text x="93" y="299" text-anchor="middle" class="tree-tag">Confirmada · toque para ver</text>
+                  <rect x="10" y="206" width="360" height="74" rx="8"/>
+                  <text x="190" y="228" text-anchor="middle" class="tree-name">Carlos Salarini + Elvira Pompermayer</text>
+                  <text x="190" y="245" text-anchor="middle" class="tree-caption">Casamento 1896 · 12 filhos (pag. 118): 4 confirmados</text>
+                  <text x="190" y="267" text-anchor="middle" class="tree-tag">Confirmada · toque para ver</text>
                 </g>
               </a>
 
               <g class="tree-node confirmed">
-                <rect x="10" y="336" width="166" height="74" rx="8"/>
-                <text x="93" y="362" text-anchor="middle" class="tree-name">Gervasio Salarini</text>
-                <text x="93" y="378" text-anchor="middle" class="tree-caption">avo paterno</text>
-                <text x="93" y="395" text-anchor="middle" class="tree-tag">Confirmada</text>
+                <rect x="390" y="206" width="360" height="74" rx="8"/>
+                <text x="570" y="228" text-anchor="middle" class="tree-name">Stefano Vezzoni + Barbara Bissa</text>
+                <text x="570" y="245" text-anchor="middle" class="tree-caption">Casamento 20/07/1918, Iriritiba-ES</text>
+                <text x="570" y="267" text-anchor="middle" class="tree-tag">Confirmada</text>
               </g>
 
-              <!-- Coluna direita: avo paterna -->
-              <g class="tree-node strong">
-                <rect x="204" y="24" width="166" height="74" rx="8"/>
-                <text x="287" y="46" text-anchor="middle" class="tree-name">Giacomo C. Vezzoni</text>
-                <text x="287" y="61" text-anchor="middle" class="tree-name">+ Rosa Maria Barili</text>
-                <text x="287" y="78" text-anchor="middle" class="tree-caption">Gussola (Cremona), Italia</text>
-                <text x="287" y="91" text-anchor="middle" class="tree-tag">Pista forte</text>
+              <!-- GERACAO 2: avos -->
+              <g class="tree-node confirmed">
+                <rect x="95" y="304" width="190" height="74" rx="8"/>
+                <text x="190" y="330" text-anchor="middle" class="tree-name">Gervasio Salarini</text>
+                <text x="190" y="346" text-anchor="middle" class="tree-caption">avo paterno</text>
+                <text x="190" y="363" text-anchor="middle" class="tree-tag">Confirmada</text>
               </g>
 
               <g class="tree-node confirmed">
-                <rect x="204" y="128" width="166" height="74" rx="8"/>
-                <text x="287" y="154" text-anchor="middle" class="tree-name">Vincenzo Vezzoni</text>
-                <text x="287" y="169" text-anchor="middle" class="tree-name">+ Luigia Orsola Cetto</text>
-                <text x="287" y="187" text-anchor="middle" class="tree-tag">Confirmada</text>
+                <rect x="475" y="304" width="190" height="74" rx="8"/>
+                <text x="570" y="330" text-anchor="middle" class="tree-name">Olendina Th. Vezzoni</text>
+                <text x="570" y="346" text-anchor="middle" class="tree-caption">avo paterna</text>
+                <text x="570" y="363" text-anchor="middle" class="tree-tag">Confirmada</text>
               </g>
 
+              <!-- GERACAO 1: pai -->
               <g class="tree-node confirmed">
-                <rect x="204" y="232" width="166" height="74" rx="8"/>
-                <text x="287" y="258" text-anchor="middle" class="tree-name">Stefano Vezzoni</text>
-                <text x="287" y="273" text-anchor="middle" class="tree-name">+ Barbara Bissa</text>
-                <text x="287" y="291" text-anchor="middle" class="tree-tag">Confirmada</text>
+                <rect x="280" y="402" width="200" height="60" rx="8"/>
+                <text x="380" y="426" text-anchor="middle" class="tree-name">Benicio Vezzoni Salarini</text>
+                <text x="380" y="442" text-anchor="middle" class="tree-caption">pai</text>
+                <text x="380" y="455" text-anchor="middle" class="tree-tag">Confirmada</text>
               </g>
 
-              <g class="tree-node confirmed">
-                <rect x="204" y="336" width="166" height="74" rx="8"/>
-                <text x="287" y="362" text-anchor="middle" class="tree-name">Olendina Th. Vezzoni</text>
-                <text x="287" y="378" text-anchor="middle" class="tree-caption">avo paterna</text>
-                <text x="287" y="395" text-anchor="middle" class="tree-tag">Confirmada</text>
-              </g>
-
-              <!-- Benicio -->
-              <g class="tree-node confirmed">
-                <rect x="80" y="450" width="220" height="60" rx="8"/>
-                <text x="190" y="474" text-anchor="middle" class="tree-name">Benicio Vezzoni Salarini</text>
-                <text x="190" y="490" text-anchor="middle" class="tree-caption">pai</text>
-                <text x="190" y="503" text-anchor="middle" class="tree-tag">Confirmada</text>
-              </g>
-
-              <!-- Marcus (voce) -->
+              <!-- GERACAO 0: voce -->
               <g class="tree-node root">
-                <rect x="55" y="540" width="270" height="60" rx="8"/>
-                <text x="190" y="565" text-anchor="middle" class="tree-name">Marcus Vinicius Santos Salarini</text>
-                <text x="190" y="582" text-anchor="middle" class="tree-caption">voce</text>
+                <rect x="255" y="486" width="250" height="60" rx="8"/>
+                <text x="380" y="511" text-anchor="middle" class="tree-name">Marcus Vinicius Santos Salarini</text>
+                <text x="380" y="528" text-anchor="middle" class="tree-caption">voce</text>
               </g>
 
               <!-- legenda -->
               <g class="tree-legend">
-                <rect x="20" y="620" width="12" height="12" rx="3" class="legend-swatch confirmed"/>
-                <text x="38" y="630" class="tree-caption">Confirmada por certidao/registro primario</text>
-                <rect x="20" y="644" width="12" height="12" rx="3" class="legend-swatch strong"/>
-                <text x="38" y="654" class="tree-caption">Pista forte por indice/fonte oficial</text>
+                <rect x="20" y="566" width="12" height="12" rx="3" class="legend-swatch confirmed"/>
+                <text x="38" y="576" class="tree-caption">Confirmada por certidao/registro primario</text>
+                <rect x="20" y="586" width="12" height="12" rx="3" class="legend-swatch strong"/>
+                <text x="38" y="596" class="tree-caption">Pista forte por indice/fonte oficial</text>
+                <rect x="420" y="566" width="12" height="12" rx="3" class="legend-swatch gap"/>
+                <text x="438" y="576" class="tree-caption">Lacuna: origem ainda nao encontrada</text>
               </g>
             </svg>
           </div>
 
-          <p class="tree-note">A linha da avo (Vezzoni/Bissa) so entrou na pesquisa em 2026-07-03 e ja alcancou o mesmo nivel de confianca da linha do avo em varios elos. Bissa/Libardi (bisavos maternos de Olendina) ainda nao tem origem italiana confirmada e por isso nao aparecem neste resumo; veja a secao "Linha da avo" abaixo.</p>
+          <p class="tree-note">Arvore completa a partir de voce: quatro linhas de bisavos, todas com pai e mae confirmados ou em pista forte, exceto os pais de Estefano Bissa e Maria Libardi (pendencia VZ-003, ainda sem origem italiana identificada) e a mae de Carlos Salarini (pendencia SA-002: a arvore colaborativa aponta Teresa Negri, mas o registro de nascimento do proprio Carlos ainda nao foi localizado). Toque no card "Carlos Salarini + Elvira Pompermayer" para ver o painel completo da linha Salarini, com os 12 filhos do casal.</p>
         </div>
       </section>
 
