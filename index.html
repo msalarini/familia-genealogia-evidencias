@@ -734,6 +734,23 @@
       stroke-width: 2;
     }
 
+    .tree-link-node {
+      cursor: pointer;
+    }
+
+    .tree-link-node .tree-node rect {
+      transition: fill .15s ease;
+    }
+
+    .tree-link-node:hover .tree-node rect,
+    .tree-link-node:focus .tree-node rect {
+      fill: var(--surface-soft);
+    }
+
+    .tree-link-node .tree-tag {
+      text-decoration: underline;
+    }
+
     .tree-node.confirmed rect {
       stroke: var(--green);
     }
@@ -1024,12 +1041,15 @@
                 <text x="93" y="187" text-anchor="middle" class="tree-tag">Pista forte</text>
               </g>
 
-              <g class="tree-node confirmed">
-                <rect x="10" y="232" width="166" height="74" rx="8"/>
-                <text x="93" y="258" text-anchor="middle" class="tree-name">Carlos Salarini</text>
-                <text x="93" y="273" text-anchor="middle" class="tree-name">+ Elvira Pompermayer</text>
-                <text x="93" y="291" text-anchor="middle" class="tree-tag">Confirmada</text>
-              </g>
+              <a href="#salarini-foco" class="tree-link-node" aria-label="Ver o painel completo da linha Salarini, com os 12 filhos de Carlos e Elvira">
+                <g class="tree-node confirmed">
+                  <rect x="10" y="232" width="166" height="74" rx="8"/>
+                  <text x="93" y="254" text-anchor="middle" class="tree-name">Carlos Salarini</text>
+                  <text x="93" y="269" text-anchor="middle" class="tree-name">+ Elvira Pompermayer</text>
+                  <text x="93" y="286" text-anchor="middle" class="tree-caption">12 filhos (pag. 118): 3 confirmados</text>
+                  <text x="93" y="299" text-anchor="middle" class="tree-tag">Confirmada · toque para ver</text>
+                </g>
+              </a>
 
               <g class="tree-node confirmed">
                 <rect x="10" y="336" width="166" height="74" rx="8"/>
