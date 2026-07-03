@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arvore Genealogica Pompermayer/Hueller</title>
+  <title>Arvore Genealogica Paterna - Pompermayer e Vezzoni</title>
   <style>
     :root {
       color-scheme: light;
@@ -353,40 +353,6 @@
       width: 100%;
     }
 
-    .document-card figure img,
-    .document-strip img {
-      min-width: 0;
-    }
-
-    .document-strip {
-      display: grid;
-      gap: 10px;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      margin-top: 14px;
-    }
-
-    .document-strip a {
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .document-strip img {
-      aspect-ratio: 3 / 4;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      object-fit: cover;
-      object-position: top;
-      width: 100%;
-    }
-
-    .document-strip span {
-      color: #31404e;
-      display: block;
-      font-size: 12px;
-      font-weight: 750;
-      padding-top: 6px;
-    }
-
     .evidence-body,
     .confidence-card,
     .next-card {
@@ -594,10 +560,6 @@
       .evidence-card.featured {
         grid-column: 1 / -1;
       }
-
-      .document-strip {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-      }
     }
   </style>
 </head>
@@ -606,31 +568,31 @@
     <header class="hero" id="topo">
       <div class="hero-inner">
         <p class="kicker">Memoria genealogica em construcao</p>
-        <h1>Arvore Pompermayer/<wbr>Hueller</h1>
-        <p class="hero-subtitle">Uma pagina mobile-first para acompanhar a linha familiar, as provas ja reunidas e as lacunas que ainda precisam de documento primario.</p>
+        <h1>Arvore paterna: Pompermayer &amp; <wbr>Vezzoni</h1>
+        <p class="hero-subtitle">Uma pagina mobile-first para acompanhar as duas linhas da arvore paterna - a do avo (Salarini/Pompermayer) e a da avo (Vezzoni/Bissa) - com as provas ja reunidas e as lacunas que ainda precisam de documento primario.</p>
 
         <div class="hero-meta" aria-label="Resumo da pesquisa">
           <div class="stat-row">
             <div class="stat">
               <strong>1874</strong>
-              <span>Nascimento indicado para Ricardo</span>
+              <span>Nascimento indicado para Ricardo Pompermayer</span>
             </div>
             <div class="stat">
-              <strong>55906</strong>
-              <span>Scheda no Nati in Trentino</span>
+              <strong>1890</strong>
+              <span>Imigracao confirmada de Vincenzo Vezzoni</span>
             </div>
             <div class="stat">
-              <strong>5</strong>
-              <span>Geracoes principais nesta linha</span>
+              <strong>1918</strong>
+              <span>Casamento confirmado de Stefano e Barbara</span>
             </div>
             <div class="stat">
-              <strong>7</strong>
-              <span>Schede italianas estruturadas</span>
+              <strong>2</strong>
+              <span>Linhas paternas em pesquisa: avo e avo</span>
             </div>
           </div>
           <div class="status-strip">
-            <strong>Resumo atual: a chegada de Cristano + Anna ao Espirito Santo ganhou pista oficial APEES; a ponte Elvira -> Ricardo ainda precisa de fonte primaria.</strong>
-            <span>Fonte-base: memoria_genealogica_pompermayer_COMPLETA.md, evidencias IT-001 a IT-004, BR-005 e DOC-001/Fichario3.pdf publicado.</span>
+            <strong>Resumo atual: a linha Vezzoni/Bissa (avo paterna) ganhou certidao de casamento e registro de imigracao confirmados em 2026-07-03; a linha Pompermayer (avo paterno) segue com pistas fortes na Italia e a ponte Elvira -&gt; Ricardo ainda precisa de fonte primaria.</strong>
+            <span>Fonte-base: memoria_genealogica_pompermayer_COMPLETA.md, evidencias IT-001 a IT-004, VZ-001, VZ-002 e certidoes/relatorios ja descritos na pesquisa.</span>
           </div>
         </div>
       </div>
@@ -638,7 +600,8 @@
 
     <nav class="nav" aria-label="Navegacao da pagina">
       <div class="nav-inner">
-        <a href="#linha">Linha principal</a>
+        <a href="#linha">Linha do avo</a>
+        <a href="#vezzoni">Linha da avo</a>
         <a href="#evidencias">Evidencias</a>
         <a href="#confianca">Confianca</a>
         <a href="#proximas">Proximas buscas</a>
@@ -649,8 +612,8 @@
       <section id="linha">
         <div class="section-inner">
           <div class="section-heading">
-            <h2>Linha principal pesquisada</h2>
-            <p>Esta e a narrativa de trabalho mais importante ate agora: dos Pompermayer/Hueller em Marter/Roncegno ate a linha Salarini documentada no Brasil.</p>
+            <h2>Linha do avo paterno: Salarini/Pompermayer</h2>
+            <p>Do avo paterno Gervasio Salarini ate os Pompermayer/Hueller em Marter/Roncegno, na Italia.</p>
           </div>
 
           <div class="lineage" aria-label="Linha ancestral">
@@ -659,7 +622,7 @@
                 <span class="tag pending">Indice forte</span>
               </div>
               <h3>Cristano Pompermayer + Anna Hueller</h3>
-              <p>O Nati in Trentino sustenta cinco nascimentos Pompermajer entre 1866 e 1874 em Roncegno/Marter. O Projeto Imigrantes APEES reforca a chegada ao Espirito Santo em 1875 no navio Cervantes, com Anna Hueller e filhos.</p>
+              <p>O Nati in Trentino sustenta o grupo familiar com cinco nascimentos Pompermajer entre 1866 e 1874 em Roncegno/Marter. Ainda precisamos localizar o casamento e conferir a variacao Anna/Giovanna nos assentos originais.</p>
             </article>
 
             <article class="person pending">
@@ -675,7 +638,7 @@
                 <span class="tag gap">Lacuna critica</span>
               </div>
               <h3>Elvira Pompermayer + Carlos Salarini</h3>
-              <p>O livro/fotos e fontes secundarias web colocam Elvira como filha de Ricardo e Justina; uma pista aponta casamento com Carlos em 1896. Falta documento primario.</p>
+              <p>O livro/fotos colocam Elvira como filha de Ricardo e Justina. Falta nascimento, casamento ou obito de Elvira confirmando essa filiacao.</p>
             </article>
 
             <article class="person">
@@ -693,7 +656,49 @@
               <h3>Benicio Vezzoni Salarini</h3>
               <p>Certidao de nascimento confirma Benicio como filho de Gervasio Salarini e Olendina, fechando a parte brasileira mais segura da linha.</p>
             </article>
+          </div>
+        </div>
+      </section>
 
+      <section id="vezzoni">
+        <div class="section-inner">
+          <div class="section-heading">
+            <h2>Linha da avo paterna: Vezzoni/Bissa</h2>
+            <p>Esta linha ficou fora do loop de pesquisa ate 2026-07-03. Comeca em Gussola, provincia de Cremona, na Lombardia (Italia) - uma regiao diferente do Trentino da linha Pompermayer - e chega a avo paterna, Olendina Thereza Vezzoni.</p>
+          </div>
+
+          <div class="lineage" aria-label="Linha ancestral Vezzoni/Bissa">
+            <article class="person pending">
+              <div class="tag-row">
+                <span class="tag strong">Pista forte</span>
+              </div>
+              <h3>Giacomo Cristoforo Vezzoni + Rosa Maria Barili</h3>
+              <p>Pais de Vincenzo Vezzoni segundo fonte secundaria de genealogia, cruzada com a data de obito de Stefano na certidao brasileira. O registro oficial de imigracao confirma o pai como "Giacomo". Falta registro primario italiano.</p>
+            </article>
+
+            <article class="person">
+              <div class="tag-row">
+                <span class="tag confirmed">Confirmada</span>
+              </div>
+              <h3>Vincenzo Vezzoni + Luigia Orsola Cetto</h3>
+              <p>Registro de Entrada de Imigrante do Projeto Imigrantes/APEES confirma Vincenzo, natural de Gussola/Cremona/Lombardia, embarcado sozinho em Genova em 10/11/1890 no navio "Città di Roma", desembarcado em Vitoria-ES em 1890.</p>
+            </article>
+
+            <article class="person">
+              <div class="tag-row">
+                <span class="tag confirmed">Confirmada</span>
+              </div>
+              <h3>Stefano/Estevao Vezzoni + Barbara Bissa</h3>
+              <p>Certidao de casamento inteiro teor confirma o casamento em 20/07/1918, em Iriritiba/Anchieta-ES, com retificacao judicial de 2018 que corrige os nomes para Stefano Vezzoni e Vincenzo Vezzoni + Luigia Orsola Cetto.</p>
+            </article>
+
+            <article class="person">
+              <div class="tag-row">
+                <span class="tag confirmed">Confirmada</span>
+              </div>
+              <h3>Olendina Thereza Vezzoni</h3>
+              <p>Certidao de nascimento confirma Olendina como filha de Stefano e Barbara, e avo paterna do autor da pesquisa. Segue na linha principal ate Gervasio Salarini e Benicio.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -706,54 +711,6 @@
           </div>
 
           <div class="evidence-grid">
-            <article class="evidence-card featured">
-              <div class="evidence-body">
-                <p class="eyebrow">BR-004 - Mapa de acesso</p>
-                <h3>Casamento Elvira + Carlos precisa de FamilySearch logado</h3>
-                <p>O catalogo APEES Registros Civis pesquisado cobre fundo 1920-1975; para Anchieta/Iriritiba, casamentos aparecem a partir de 1929/1937. Para uma pista de 1896, o caminho agora e FamilySearch logado ou registro paroquial de Benevente/Anchieta.</p>
-                <div class="links">
-                  <a class="button-link" href="BR-004/2026-07-03_mapa-acesso-casamento-elvira-carlos.md">Ver mapa BR-004</a>
-                  <a class="button-link secondary" href="https://www.familysearch.org/search/catalog/3491537?availability=Family%20History%20Library">Abrir catalogo 3491537</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="evidence-card document-card featured">
-              <figure>
-                <a href="BR-005/apees-colonias-pompermaier-pagina-286.jpg">
-                  <img loading="lazy" src="BR-005/apees-colonias-pompermaier-pagina-286.jpg" alt="Pagina 286 do livro Colonias Imperiais na Terra do Cafe, com Giovanni Pompermaier e legenda sobre Cristano, Rio Novo e Roncegno">
-                </a>
-              </figure>
-              <div class="evidence-body">
-                <p class="eyebrow">BR-005 - APEES - Projeto Imigrantes</p>
-                <h3>Cristano Pompermaier chegou no Cervantes em 1875</h3>
-                <p>Consulta ao Projeto Imigrantes APEES retornou Cristano como chefe da familia POMPERMAIER, pais Italia, navio Cervantes, ano 1875, com Anna Hueller e filhos, incluindo Riccardo idade 1. O livro APEES reforca Rio Novo e origem Roncegno.</p>
-                <div class="links">
-                  <a class="button-link" href="BR-005/2026-07-03_apees-projeto-imigrantes-cristano-pompermaier.md">Ver resumo BR-005</a>
-                  <a class="button-link secondary" href="BR-005/2026-07-03_apees-projeto-imigrantes-cristano-pompermaier.csv">Abrir CSV</a>
-                  <a class="button-link secondary" href="https://imigrantes.es.gov.br/">Projeto Imigrantes</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="evidence-card document-card featured">
-              <figure>
-                <a href="BR-006/2026-07-03_familysearch_obito-edylio-salarini_viewer.png">
-                  <img loading="lazy" src="BR-006/2026-07-03_familysearch_obito-edylio-salarini_viewer.png" alt="FamilySearch com obito de Edylio Salarini em Anchieta, 1939, filho de Carlos Salarini e Elvira">
-                </a>
-              </figure>
-              <div class="evidence-body">
-                <p class="eyebrow">BR-006 - FamilySearch - Anchieta 1939</p>
-                <h3>Obito de Edylio reforca filhos de Carlos + Elvira</h3>
-                <p>O texto completo do FamilySearch localizou Edylio Salarini, falecido em 26/08/1939, filho de Carlos Salarini e Elvira. O OCR distorce o sobrenome de Elvira, entao a imagem original ainda precisa ser baixada/conferida.</p>
-                <div class="links">
-                  <a class="button-link" href="BR-006/2026-07-03_familysearch_obito-edylio-salarini-1939.md">Ver resumo BR-006</a>
-                  <a class="button-link secondary" href="BR-006/2026-07-03_familysearch_obito-edylio-salarini_transcricao.txt">Abrir transcricao</a>
-                  <a class="button-link secondary" href="https://www.familysearch.org/ark:/61903/3:1:3Q9M-C3H4-1XD1?view=fullText&keywords=Salarini&lang=pt">Abrir no FamilySearch</a>
-                </div>
-              </div>
-            </article>
-
             <article class="evidence-card featured">
               <figure>
                 <img src="IT-001/2026-07-03_nati-trentino_tabela-riccardo-pompermajer.png" alt="Tabela do Nati in Trentino com Pompermajer Riccardo, nascido em 24/05/1874, filho de Cristano e Ueller Anna">
@@ -780,29 +737,11 @@
               </div>
             </article>
 
-            <article class="evidence-card document-card featured">
-              <figure>
-                <a href="DOC-001/pages/fichario3-page-3.jpg">
-                  <img loading="lazy" src="DOC-001/pages/fichario3-page-3.jpg" alt="Certidao de casamento de Gervasio Salarini e Olendina Thereza Vizzoni, com filiacao de Gervasio como filho de Carlos Salarini e Elvira Pompermayer">
-                </a>
-              </figure>
+            <article class="evidence-card">
               <div class="evidence-body">
-                <p class="eyebrow">DOC-001 - Fichario3.pdf publicado</p>
+                <p class="eyebrow">Fichario3.pdf</p>
                 <h3>Certidoes brasileiras sustentam a linha Salarini</h3>
-                <p>O PDF completo e as cinco paginas em imagem estao publicados aqui como evidencia visual. A pagina 3 confirma Gervasio Salarini como filho de Carlos Salarini e Elvira Pompermayer; a pagina 4 confirma Benicio como filho de Gervasio e Olendina.</p>
-                <div class="links">
-                  <a class="button-link" href="DOC-001/fichario3.pdf">Abrir PDF completo</a>
-                  <a class="button-link secondary" href="DOC-001/2026-07-03_fichario3_certidoes-civis.md">Ver resumo tecnico</a>
-                  <a class="button-link secondary" href="BR-003/2026-07-03_batismos-anchieta_txt-varredura-pompermayer-salarini.md">Ver varredura BR-003</a>
-                  <a class="button-link secondary" href="BR-003/BatismosAnchieta-UNIFICADO_10669_1861-1896.txt">Abrir TXT de batismos</a>
-                </div>
-                <div class="document-strip" aria-label="Paginas do Fichario3.pdf">
-                  <a href="DOC-001/pages/fichario3-page-1.jpg"><img loading="lazy" src="DOC-001/pages/fichario3-page-1.jpg" alt="Pagina 1 do Fichario3.pdf, obito de Stefano Vezzoni"><span>Pagina 1 - obito Stefano</span></a>
-                  <a href="DOC-001/pages/fichario3-page-2.jpg"><img loading="lazy" src="DOC-001/pages/fichario3-page-2.jpg" alt="Pagina 2 do Fichario3.pdf, nascimento de Olendina Thereza Vizzoni"><span>Pagina 2 - Olendina</span></a>
-                  <a href="DOC-001/pages/fichario3-page-3.jpg"><img loading="lazy" src="DOC-001/pages/fichario3-page-3.jpg" alt="Pagina 3 do Fichario3.pdf, casamento de Gervasio Salarini e Olendina"><span>Pagina 3 - casamento</span></a>
-                  <a href="DOC-001/pages/fichario3-page-4.jpg"><img loading="lazy" src="DOC-001/pages/fichario3-page-4.jpg" alt="Pagina 4 do Fichario3.pdf, nascimento de Benicio Vezzoni Salarini"><span>Pagina 4 - Benicio</span></a>
-                  <a href="DOC-001/pages/fichario3-page-5.jpg"><img loading="lazy" src="DOC-001/pages/fichario3-page-5.jpg" alt="Pagina 5 do Fichario3.pdf, obito de Stefano Vezzoni"><span>Pagina 5 - obito</span></a>
-                </div>
+                <p>As certidoes descritas no arquivo principal sustentam Carlos + Elvira -> Gervasio -> Benicio. Esta parte e tratada como confirmada na pesquisa atual.</p>
               </div>
             </article>
 
@@ -841,6 +780,35 @@
                 </div>
               </div>
             </article>
+
+            <article class="evidence-card featured">
+              <figure>
+                <img src="VZ-002/2026-07-03_apees-projeto-imigrantes_vincenzo-vezzoni-registro-entrada.jpg" alt="Registro de Entrada de Imigrante do Projeto Imigrantes APEES para Vincenzo Vezzoni, natural de Gussola, Cremona, Lombardia">
+              </figure>
+              <div class="evidence-body">
+                <p class="eyebrow">VZ-002 · Projeto Imigrantes APEES · 2026-07-03</p>
+                <h3>Registro oficial de imigracao de Vincenzo Vezzoni</h3>
+                <p>Documento arquivistico primario: Vincenzo, filho de Giacomo, natural de Gussola/Cremona/Lombardia, embarcou sozinho em Genova em 10/11/1890 no navio "Città di Roma" e desembarcou em Vitoria-ES em 1890.</p>
+                <div class="links">
+                  <a class="button-link" href="VZ-002/2026-07-03_apees-projeto-imigrantes_vincenzo-vezzoni.md">Ver resumo</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="evidence-card">
+              <figure>
+                <img src="VZ-001/2026-07-03_cartorio-alto-pongal_certidao-casamento-estevao-vezzoni-barbara-bissa.png" alt="Certidao de casamento de Estevao Vezzoni e Barbara Bissa, Cartorio de Vila de Alto Pongal, 1918">
+              </figure>
+              <div class="evidence-body">
+                <p class="eyebrow">VZ-001 · Cartorio de Vila de Alto Pongal · 2026-07-03</p>
+                <h3>Casamento de Stefano Vezzoni e Barbara Bissa</h3>
+                <p>Certidao inteiro teor confirma o casamento em 20/07/1918, em Iriritiba/Anchieta-ES, com filiacao de ambos e averbacao de retificacao judicial de 2018 para os nomes italianos corretos.</p>
+                <div class="links">
+                  <a class="button-link secondary" href="VZ-001/2026-07-03_certidao-casamento_estevao-vezzoni-barbara-bissa.md">Ver resumo</a>
+                  <a class="button-link secondary" href="VZ-001/2026-07-03_cartorio-alto-pongal_retificacao-casamento-vezzoni-nomes-italianos.png">Ver retificacao</a>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -856,19 +824,19 @@
             <article class="confidence-card">
               <p class="eyebrow">Confirmado</p>
               <h3>Benicio -> Gervasio + Olendina</h3>
-              <p>Base: certidao de nascimento de Benicio no Fichario3.pdf, agora publicada na pagina de evidencias.</p>
+              <p>Base: certidao de nascimento de Benicio e cruzamentos civis ja descritos na memoria.</p>
             </article>
 
             <article class="confidence-card">
               <p class="eyebrow">Confirmado</p>
               <h3>Gervasio -> Carlos + Elvira</h3>
-              <p>Base: certidao de casamento de Gervasio e certidao de nascimento de Benicio no Fichario3.pdf.</p>
+              <p>Base: certidao de casamento de Gervasio e certidao de nascimento de Benicio.</p>
             </article>
 
             <article class="confidence-card strong">
               <p class="eyebrow">Pista forte</p>
               <h3>Ricardo -> Cristano + Anna</h3>
-              <p>Base: Nati in Trentino, scheda 55906, mais Projeto Imigrantes APEES com Riccardo idade 1 no grupo de Cristano + Anna em 1875. Falta copiar o assento paroquial e o registro de entrada completo.</p>
+              <p>Base: indice Nati in Trentino, scheda 55906, reforcada pelo conjunto de filhos Pompermajer em IT-002. Falta copiar o assento paroquial original.</p>
             </article>
 
             <article class="confidence-card strong">
@@ -894,11 +862,29 @@
               <h3>Sem prova primaria, marcar como hipotese</h3>
               <p>O arquivo deve registrar a fonte, a confianca, o proximo passo e os lugares ja pesquisados para evitar buscas repetidas.</p>
             </article>
+
+            <article class="confidence-card">
+              <p class="eyebrow">Confirmado</p>
+              <h3>Stefano + Barbara, casamento</h3>
+              <p>Base: certidao de casamento inteiro teor de 20/07/1918, com averbacao de retificacao judicial de 2018.</p>
+            </article>
+
+            <article class="confidence-card">
+              <p class="eyebrow">Confirmado</p>
+              <h3>Vincenzo Vezzoni: origem e imigracao</h3>
+              <p>Base: Registro de Entrada de Imigrante do Projeto Imigrantes/APEES. Natural de Gussola/Cremona/Lombardia, imigrou sozinho em 1890.</p>
+            </article>
+
+            <article class="confidence-card strong">
+              <p class="eyebrow">Pista forte</p>
+              <h3>Vincenzo -> Giacomo Cristoforo + Rosa Maria Barili</h3>
+              <p>Base: fonte secundaria de genealogia, cruzada com a data de obito de Stefano; o registro APEES confirma so o primeiro nome do pai, "Giacomo". Falta registro primario italiano.</p>
+            </article>
           </div>
 
           <div class="callout">
             <strong>Leitura curta da pesquisa ate aqui</strong>
-            <p>A arvore brasileira esta se firmando bem. O gargalo genealogico e provar documentalmente que Elvira Pompermayer era filha de Ricardo Pompermayer e Justina Bressanelli; depois disso, a evidencia de Ricardo em Trentino ganha muito mais valor para fechar a ponte Italia -> Brasil.</p>
+            <p>A linha Vezzoni/Bissa (avo paterna) avancou rapido em 2026-07-03, com casamento e imigracao confirmados por certidao e registro oficial. Na linha Pompermayer (avo paterno), o gargalo genealogico segue sendo provar documentalmente que Elvira Pompermayer era filha de Ricardo Pompermayer e Justina Bressanelli.</p>
           </div>
         </div>
       </section>
@@ -938,25 +924,49 @@
             <article class="next-card">
               <p class="eyebrow">Prioridade 5</p>
               <h3>Casamento Elvira + Carlos</h3>
-              <p>Buscar em torno de 1896 no FamilySearch logado, especialmente catalogo APEES 3491537 e registros paroquiais de Benevente/Anchieta. O recorte APEES 1920-1975 nao cobre essa data.</p>
+              <p>Esse registro pode conectar a linha Pompermayer com a Salarini de forma direta e primaria.</p>
             </article>
 
             <article class="next-card">
               <p class="eyebrow">Prioridade 6</p>
               <h3>Imigracao de Cristano + Anna</h3>
-              <p>Nova pista oficial localizada no Projeto Imigrantes APEES. Proximo passo: solicitar o Registro de Entrada de Imigrante de POMPERMAIER Cristano e as fontes primarias citadas.</p>
+              <p>Verificar chegada ao Espirito Santo em 1875 e possiveis registros da colonia Rio Novo/Segundo Territorio.</p>
             </article>
 
             <article class="next-card">
               <p class="eyebrow">Metodo</p>
               <h3>Salvar melhor evidencia possivel</h3>
-              <p>Quando houver imagem original do livro ou certidao autorizada, salvar a melhor imagem possivel, publicar o arquivo-fonte e manter resumo tecnico.</p>
+              <p>Quando houver imagem original do livro, salvar a imagem. Quando nao houver, salvar print, transcricao estruturada, link e contexto.</p>
             </article>
 
             <article class="next-card">
               <p class="eyebrow">Controle</p>
               <h3>Ignorar fontes ja pesquisadas</h3>
               <p>Registrar bases, termos usados e resultados negativos em pesquisa/fontes_pesquisadas.md para o loop nao repetir terreno.</p>
+            </article>
+
+            <article class="next-card">
+              <p class="eyebrow">Vezzoni · Prioridade 1</p>
+              <h3>Origem italiana de Estefano Bissa e Maria Libardi</h3>
+              <p>Pais de Barbara Bissa, ja confirmados por certidao brasileira. Falta localizar o nascimento/regiao deles na Italia.</p>
+            </article>
+
+            <article class="next-card">
+              <p class="eyebrow">Vezzoni · Prioridade 2</p>
+              <h3>Registro primario de Vincenzo Vezzoni em Gussola</h3>
+              <p>Buscar nascimento/casamento de Vincenzo no Archivio di Stato di Cremona ou Portale Antenati para transformar a pista em fonte primaria italiana.</p>
+            </article>
+
+            <article class="next-card">
+              <p class="eyebrow">Vezzoni · Divergencia</p>
+              <h3>Onde Luigia Orsola Cetto casou e faleceu</h3>
+              <p>Uma fonte secundaria diz casamento no Brasil em 1891 e obito na Italia, o que e incomum. Precisa de certidao primaria para resolver.</p>
+            </article>
+
+            <article class="next-card">
+              <p class="eyebrow">Vezzoni · Pista aberta</p>
+              <h3>"Proveniente da Argentina"</h3>
+              <p>O registro oficial de imigracao de Vincenzo traz essa observacao, ainda sem explicacao. Pode indicar passagem pela Argentina antes do embarque em Genova.</p>
             </article>
           </div>
         </div>
