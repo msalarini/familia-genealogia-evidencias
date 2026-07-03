@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memoria Genealogica Pompermayer/Hueller - Evidencias</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1c2430;
+      --muted: #5b6676;
+      --line: #d9dee7;
+      --paper: #ffffff;
+      --wash: #f5f7fa;
+      --accent: #1f6f78;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--wash);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 48px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      margin: 0 0 10px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin: 32px 0 12px;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    article {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      color: #ffffff;
+      background: var(--accent);
+      border-radius: 999px;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      padding: 3px 8px;
+      text-transform: uppercase;
+    }
+
+    figure {
+      margin: 14px 0 0;
+    }
+
+    img {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      display: block;
+      height: auto;
+      max-width: 100%;
+    }
+
+    figcaption {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    code {
+      background: #eef2f6;
+      border-radius: 4px;
+      padding: 2px 4px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Memoria Genealogica Pompermayer/Hueller</h1>
+      <p class="muted">Storytelling visual das evidencias encontradas durante a pesquisa.</p>
+    </header>
+
+    <section>
+      <h2>Como ler esta pagina</h2>
+      <p>Esta pagina organiza prints e recortes em ordem narrativa. Ela nao substitui o arquivo principal <code>memoria_genealogica_pompermayer_COMPLETA.md</code>, nem o inventario tecnico em <code>pesquisa/evidencias.md</code>.</p>
+      <p>Cada evidencia deve indicar a pergunta investigada, a fonte, a leitura curta, o grau de confianca e a proxima pergunta.</p>
+    </section>
+
+    <section>
+      <h2>Linha do tempo</h2>
+      <div class="timeline">
+        <article>
+          <div class="meta">IT-001 · Nati in Trentino · 2026-07-03</div>
+          <span class="tag">Pista forte</span>
+          <h3>Ricardo Pompermayer aparece como Pompermajer Riccardo em Marter</h3>
+          <p>Pergunta investigada: confirmar o nascimento/batismo de Ricardo Pompermayer, filho de Cristano Pompermayer e Anna Hueller, em Marter/Roncegno no ano de 1874.</p>
+          <p>Resultado: o indice Nati in Trentino retornou <strong>Pompermajer Riccardo</strong>, nascido em <strong>24/05/1874</strong>, filho de <strong>Cristano</strong> e <strong>Ueller Anna</strong>, na paroquia <strong>Marter - S. Margherita</strong>, comuna <strong>Roncegno Terme</strong>.</p>
+          <p>Melhor evidencia salva: <a href="IT-001/2026-07-03_nati-trentino_scheda-55906.md">transcricao estruturada da scheda 55906</a> e <a href="IT-001/2026-07-03_nati-trentino_scheda-55906.csv">CSV da linha do indice</a>. Os prints abaixo ficam como apoio visual.</p>
+          <p>Leitura: a ficha confirma como indice a data, a filiacao, a grafia Pompermajer e a relacao Marter/Roncegno. Proxima pergunta: obter a imagem ou copia do assento paroquial original para elevar de pista forte para fonte primaria.</p>
+          <figure>
+            <img src="IT-001/2026-07-03_nati-trentino_tabela-riccardo-pompermajer.png" alt="Tabela do Nati in Trentino com Pompermajer Riccardo, 24/05/1874, filho de Cristano e Ueller Anna">
+            <figcaption>Tabela de resultados do Nati in Trentino mostrando a linha de Pompermajer Riccardo.</figcaption>
+          </figure>
+          <figure>
+            <img src="IT-001/2026-07-03_nati-trentino_resultado-riccardo-pompermajer.png" alt="Modal do Nati in Trentino com Pompermajer Riccardo, scheda numero 55906">
+            <figcaption>Modal da ficha/scheda 55906 no Nati in Trentino.</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
