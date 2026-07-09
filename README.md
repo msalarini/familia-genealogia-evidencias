@@ -1,31 +1,12 @@
-# Evidencias
+# Arvore genealogica - evidencias publicas
 
-Esta pasta guarda prints, recortes, imagens e documentos usados como apoio visual da pesquisa genealogica.
+Site publico (GitHub Pages): https://msalarini.github.io/familia-genealogia-evidencias/
 
-## Organizacao
+Este repositorio publica apenas os arquivos "publicaveis" da pesquisa genealogica do usuario (nunca certidoes/dados sensiveis de pessoas vivas sem autorizacao). Fonte de trabalho privada: repositorio `familia-genealogia`.
 
-Use uma subpasta por pendencia:
+## Estrutura (a partir de 2026-07-05)
 
-```text
-evidencias/IT-001/
-evidencias/IT-002/
-evidencias/BR-001/
-```
+- `index.html` - pagina principal ativa: linha materna do casal (familia **Gardacho**), pesquisa em andamento.
+- `salarini-pompermayer/` - linha paterna do usuario (Salarini/Pompermayer/Vezzoni/Bissa), **arquivada**. Pesquisa concluida em etapas anteriores; contem `index.html` proprio e as pastas de evidencia por pendencia (`IT-001/`, `BR-001/`, `VZ-001/`, etc.).
 
-Nome de arquivo recomendado:
-
-```text
-AAAA-MM-DD_fonte_assunto.ext
-```
-
-Exemplo:
-
-```text
-2026-07-03_nati-trentino_riccardo-pompermajer.png
-```
-
-## Regra
-
-Todo arquivo nesta pasta deve estar registrado em `pesquisa/evidencias.md`.
-
-Nao salvar dados sensiveis de pessoas vivas sem necessidade clara.
+Novas pastas de evidencia da linha Gardacho (`GA-001/`, etc.) devem ficar direto na raiz deste repositorio, ao lado de `index.html`.
