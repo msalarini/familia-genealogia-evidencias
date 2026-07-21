@@ -287,6 +287,24 @@
     .status.na { background: transparent; border: 1px dashed var(--line-strong); color: var(--na); }
     .status.na::before { display: none; }
 
+    a.status {
+      text-decoration: none;
+      transition: filter .12s ease, transform .12s ease;
+    }
+
+    a.status::after {
+      content: "↗";
+      font-size: 10px;
+      margin-left: 1px;
+      opacity: .75;
+    }
+
+    a.status:hover {
+      color: var(--ok);
+      filter: brightness(0.94);
+      transform: translateY(-1px);
+    }
+
     /* ---------- Status table ---------- */
     .table-scroll { -webkit-overflow-scrolling: touch; overflow-x: auto; }
 
@@ -502,7 +520,7 @@
             <h3>Vincenzo Vezzoni &amp; Luigia Orsola Cetto</h3>
             <p>Vincenzo nasceu em 29 de maio de 1869, em Gussola (Cremona, Lombardia). Imigrou sozinho para o Brasil em 1890, desembarcando no Espírito Santo, onde se casou com Luigia Orsola Cetto.</p>
             <div class="chip-row">
-              <span class="status ok">Nascimento — obtido</span>
+              <a class="status ok" href="VZ-004/2026-07-21_portale-antenati_gussola-1869-nascimento-vincenzo-vezzoni.jpg" target="_blank" rel="noopener">Nascimento — obtido</a>
               <span class="status pending">Casamento — pendente</span>
             </div>
           </article>
@@ -513,8 +531,8 @@
             <p>Filho de Vincenzo. Casou com Barbara Bissa em 20 de julho de 1918, em Iriritiba (hoje Anchieta-ES). Faleceu em 31 de outubro de 1970.</p>
             <div class="chip-row">
               <span class="status pending">Nascimento — pendente</span>
-              <span class="status ok">Casamento — obtido</span>
-              <span class="status ok">Óbito — obtido</span>
+              <a class="status ok" href="VZ-001/2026-07-03_cartorio-alto-pongal_certidao-casamento-estevao-vezzoni-barbara-bissa.png" target="_blank" rel="noopener">Casamento — obtido</a>
+              <a class="status ok" href="DOC-001/fichario3.pdf#page=1" target="_blank" rel="noopener">Óbito — obtido</a>
             </div>
           </article>
 
@@ -523,8 +541,8 @@
             <h3>Olendina Thereza Vezzoni &amp; Gervásio Salarini</h3>
             <p>Filha de Stefano e Barbara, nasceu em 13 de julho de 1930. Casou com Gervásio Salarini em 16 de novembro de 1948.</p>
             <div class="chip-row">
-              <span class="status ok">Nascimento — obtido</span>
-              <span class="status ok">Casamento — obtido</span>
+              <a class="status ok" href="DOC-001/fichario3.pdf#page=2" target="_blank" rel="noopener">Nascimento — obtido</a>
+              <a class="status ok" href="DOC-001/fichario3.pdf#page=3" target="_blank" rel="noopener">Casamento — obtido</a>
               <span class="status pending">Óbito — em obtenção</span>
             </div>
           </article>
@@ -534,7 +552,7 @@
             <h3>Benício Vezzoni Salarini</h3>
             <p>Filho de Gervásio e Olendina, nasceu em 16 de março de 1951, em Dois Irmãos (Iriritiba, Anchieta-ES). Vivo.</p>
             <div class="chip-row">
-              <span class="status ok">Nascimento — obtido</span>
+              <a class="status ok" href="DOC-001/fichario3.pdf#page=4" target="_blank" rel="noopener">Nascimento — obtido</a>
               <span class="status ok">Casamento — obtido</span>
             </div>
           </article>
@@ -572,7 +590,7 @@
             <tbody>
               <tr>
                 <td class="who">Vincenzo Vezzoni<span class="role">trisavô · Itália</span></td>
-                <td><span class="status ok">Obtido</span></td>
+                <td><a class="status ok" href="VZ-004/2026-07-21_portale-antenati_gussola-1869-nascimento-vincenzo-vezzoni.jpg" target="_blank" rel="noopener">Obtido</a></td>
                 <td><span class="status pending">Pendente</span></td>
                 <td><span class="status pending">Pendente</span></td>
               </tr>
@@ -585,30 +603,30 @@
               <tr>
                 <td class="who">Stefano (Estevão) Vezzoni<span class="role">bisavô</span></td>
                 <td><span class="status pending">Pendente</span></td>
-                <td><span class="status ok">Obtido</span></td>
-                <td><span class="status ok">Obtido</span></td>
+                <td><a class="status ok" href="VZ-001/2026-07-03_cartorio-alto-pongal_certidao-casamento-estevao-vezzoni-barbara-bissa.png" target="_blank" rel="noopener">Obtido</a></td>
+                <td><a class="status ok" href="DOC-001/fichario3.pdf#page=1" target="_blank" rel="noopener">Obtido</a></td>
               </tr>
               <tr>
                 <td class="who">Barbara Bissa<span class="role">bisavó</span></td>
                 <td><span class="status pending">Pendente</span></td>
-                <td><span class="status ok">Obtido</span></td>
+                <td><a class="status ok" href="VZ-001/2026-07-03_cartorio-alto-pongal_certidao-casamento-estevao-vezzoni-barbara-bissa.png" target="_blank" rel="noopener">Obtido</a></td>
                 <td><span class="status pending">Pendente</span></td>
               </tr>
               <tr>
                 <td class="who">Olendina Thereza Vezzoni<span class="role">avó</span></td>
-                <td><span class="status ok">Obtido</span></td>
-                <td><span class="status ok">Obtido</span></td>
+                <td><a class="status ok" href="DOC-001/fichario3.pdf#page=2" target="_blank" rel="noopener">Obtido</a></td>
+                <td><a class="status ok" href="DOC-001/fichario3.pdf#page=3" target="_blank" rel="noopener">Obtido</a></td>
                 <td><span class="status pending">Em obtenção</span></td>
               </tr>
               <tr>
                 <td class="who">Gervásio Salarini<span class="role">avô</span></td>
                 <td><span class="status pending">Em obtenção</span></td>
-                <td><span class="status ok">Obtido</span></td>
+                <td><a class="status ok" href="DOC-001/fichario3.pdf#page=3" target="_blank" rel="noopener">Obtido</a></td>
                 <td><span class="status pending">Em obtenção</span></td>
               </tr>
               <tr>
                 <td class="who">Benício Vezzoni Salarini<span class="role">pai</span></td>
-                <td><span class="status ok">Obtido</span></td>
+                <td><a class="status ok" href="DOC-001/fichario3.pdf#page=4" target="_blank" rel="noopener">Obtido</a></td>
                 <td><span class="status ok">Obtido</span></td>
                 <td><span class="status na">Não se aplica</span></td>
               </tr>
