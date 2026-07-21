@@ -3,176 +3,144 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arvore Genealogica Paterna - Pompermayer e Vezzoni</title>
+  <title>Família Vezzoni — Dossiê de cidadania italiana</title>
+  <meta name="description" content="Linha de descendência e documentação civil de Vincenzo Vezzoni (Gussola, 1869) até Marcus Vinicius Santos Salarini, para o processo de reconhecimento de cidadania italiana.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      color-scheme: light;
-      --paper: #fbfaf7;
+      color-scheme: light dark;
+      --paper: #eeece1;
       --surface: #ffffff;
-      --surface-soft: #f0f5f1;
-      --ink: #17212b;
-      --muted: #626b75;
-      --line: #d8ddd9;
-      --line-strong: #aeb9b1;
-      --green: #2f6b57;
-      --green-dark: #204c3e;
-      --red: #8b3f45;
-      --blue: #345f8f;
-      --gold: #9b6f22;
-      --shadow: 0 12px 32px rgba(23, 33, 43, .08);
+      --surface-2: #f6f3e7;
+      --ink: #1d251f;
+      --muted: #5d6258;
+      --line: #d8d2bf;
+      --line-strong: #b6b096;
+      --seal: #96392c;
+      --seal-strong: #7a2d22;
+      --gold: #9c7a2f;
+      --ok: #2f6b4a;
+      --ok-bg: #e3ede4;
+      --pending: #93641a;
+      --pending-bg: #f3e6c9;
+      --gap-bg: #f2e2dd;
+      --na: #8b8f84;
+      --shadow: 0 14px 32px rgba(29, 37, 31, .09);
+      --serif: "Newsreader", Georgia, "Times New Roman", serif;
+      --sans: "Public Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
     }
 
-    * {
-      box-sizing: border-box;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #121b16;
+        --surface: #182219;
+        --surface-2: #1d281f;
+        --ink: #e9e5d6;
+        --muted: #a4ab9d;
+        --line: #2b352c;
+        --line-strong: #3d4a3d;
+        --seal: #dd8a76;
+        --seal-strong: #c46a55;
+        --gold: #d3b676;
+        --ok: #82c79f;
+        --ok-bg: #1f2f24;
+        --pending: #e2b768;
+        --pending-bg: #332a18;
+        --gap-bg: #332420;
+        --na: #6f7669;
+        --shadow: 0 14px 34px rgba(0, 0, 0, .45);
+      }
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.55;
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
       max-width: 100%;
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration-color: rgba(47, 107, 87, .42);
-      text-decoration-thickness: 2px;
-      text-underline-offset: 3px;
-    }
+    h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
 
-    a:hover {
-      color: var(--green-dark);
-    }
+    a { color: var(--seal-strong); text-decoration-color: color-mix(in srgb, var(--seal) 45%, transparent); text-underline-offset: 3px; }
+    a:hover { color: var(--seal); }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
-    img {
-      display: block;
-      height: auto;
-      max-width: 100%;
-    }
+    img { display: block; max-width: 100%; height: auto; }
 
-    .page {
-      overflow: hidden;
-    }
+    .wrap { margin: 0 auto; max-width: 760px; padding: 0 20px; }
 
-    .hero {
-      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(251,250,247,.96));
+    /* ---------- Cover ---------- */
+    .cover {
+      background: linear-gradient(180deg, var(--surface), var(--paper) 130%);
       border-bottom: 1px solid var(--line);
-      isolation: isolate;
-      min-height: 78svh;
-      max-width: 100vw;
-      padding: 20px 18px 22px;
-      position: relative;
+      padding: 56px 0 40px;
     }
 
-    .hero::before {
-      background: url("IT-001/2026-07-03_nati-trentino_tabela-riccardo-pompermajer.png") center 22% / 980px auto no-repeat;
-      content: "";
-      inset: 0;
-      opacity: .06;
-      position: absolute;
-      z-index: -1;
-    }
-
-    .hero-inner,
-    .section-inner,
-    .nav-inner {
-      margin: 0 auto;
-      max-width: 980px;
-      min-width: 0;
-      width: 100%;
-    }
-
-    .kicker {
-      color: var(--green-dark);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      margin: 10px 0 16px;
+    .eyebrow {
+      color: var(--seal-strong);
+      font-family: var(--mono);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: .11em;
       text-transform: uppercase;
     }
 
-    h1,
-    h2,
-    h3,
-    p {
-      margin: 0;
-    }
-
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 38px;
-      font-weight: 700;
-      line-height: 1.03;
-      max-width: 12ch;
-      overflow-wrap: anywhere;
-    }
-
-    .hero-subtitle {
-      color: #394653;
-      font-size: 18px;
-      line-height: 1.45;
+    .cover h1 {
+      font-family: var(--serif);
+      font-size: 46px;
+      font-weight: 600;
+      line-height: 1.08;
       margin-top: 16px;
-      max-width: 560px;
+      text-wrap: balance;
     }
 
-    .hero-meta {
-      display: grid;
-      gap: 10px;
-      margin-top: 26px;
+    .cover .dates {
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 22px;
+      font-style: italic;
+      font-weight: 500;
+      margin-top: 6px;
     }
 
-    .stat-row {
-      align-items: stretch;
-      display: grid;
-      gap: 10px;
-      grid-template-columns: 1fr 1fr;
-      min-width: 0;
-    }
-
-    .stat,
-    .status-strip {
-      background: rgba(255, 255, 255, .86);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      min-width: 0;
-      padding: 13px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 20px;
-      line-height: 1.15;
-      overflow-wrap: anywhere;
-    }
-
-    .stat span,
-    .status-strip span {
+    .cover-sub {
       color: var(--muted);
-      display: block;
+      font-size: 17px;
+      line-height: 1.6;
+      margin-top: 18px;
+      max-width: 56ch;
+    }
+
+    .cover-meta {
+      align-items: center;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      font-family: var(--mono);
       font-size: 12px;
-      margin-top: 4px;
-      overflow-wrap: anywhere;
+      gap: 8px 18px;
+      margin-top: 28px;
+      padding-top: 16px;
     }
 
-    .status-strip {
-      border-left: 5px solid var(--green);
-    }
+    .cover-meta strong { color: var(--ink); font-weight: 600; }
 
-    .status-strip strong {
-      display: block;
-      font-size: 15px;
-    }
-
+    /* ---------- Nav ---------- */
     .nav {
-      background: rgba(251, 250, 247, .96);
+      background: color-mix(in srgb, var(--paper) 92%, transparent);
+      backdrop-filter: blur(6px);
       border-bottom: 1px solid var(--line);
       position: sticky;
       top: 0;
@@ -181,1666 +149,606 @@
 
     .nav-inner {
       display: flex;
-      gap: 8px;
+      gap: 4px;
+      margin: 0 auto;
+      max-width: 760px;
       overflow-x: auto;
-      padding: 10px 18px;
+      padding: 10px 20px;
       scrollbar-width: none;
     }
 
-    .nav-inner::-webkit-scrollbar {
-      display: none;
-    }
+    .nav-inner::-webkit-scrollbar { display: none; }
 
     .nav a {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: #25313d;
+      border-radius: 7px;
+      color: var(--muted);
       flex: 0 0 auto;
       font-size: 13px;
-      font-weight: 750;
-      padding: 8px 12px;
+      font-weight: 600;
+      padding: 7px 11px;
       text-decoration: none;
     }
 
-    section {
-      padding: 34px 18px;
+    .nav a:hover { background: var(--surface); color: var(--ink); }
+
+    /* ---------- Sections ---------- */
+    section { padding: 52px 0; }
+    section + section { border-top: 1px solid var(--line); }
+
+    .section-head { margin-bottom: 30px; max-width: 62ch; }
+
+    .section-head .eyebrow { display: block; margin-bottom: 10px; }
+
+    .section-head h2 {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.16;
+      text-wrap: balance;
     }
 
-    section + section {
-      border-top: 1px solid var(--line);
-    }
-
-    .section-heading {
-      margin-bottom: 18px;
-    }
-
-    .section-heading h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
-      line-height: 1.12;
-      overflow-wrap: anywhere;
-    }
-
-    .section-heading p {
+    .section-head p {
       color: var(--muted);
-      font-size: 15px;
-      margin-top: 8px;
-      max-width: 680px;
+      font-size: 15.5px;
+      margin-top: 10px;
     }
 
-    .lineage {
-      display: grid;
-      gap: 12px;
-      min-width: 0;
-      position: relative;
-    }
+    /* ---------- Descent chain ---------- */
+    .chain { display: grid; gap: 2px; position: relative; }
 
-    .lineage::before {
+    .chain::before {
       background: var(--line-strong);
-      bottom: 18px;
+      bottom: 30px;
       content: "";
-      left: 17px;
+      left: 21px;
       position: absolute;
-      top: 18px;
-      width: 2px;
+      top: 30px;
+      width: 1.5px;
     }
 
-    .person {
+    .gen {
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: 0 8px 24px rgba(23, 33, 43, .05);
-      display: grid;
-      gap: 8px;
-      margin-left: 34px;
-      min-width: 0;
-      padding: 15px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      margin: 8px 0 8px 46px;
+      padding: 20px 22px;
       position: relative;
     }
 
-    .person::before {
-      background: var(--paper);
-      border: 3px solid var(--green);
+    .gen::before {
+      background: var(--surface);
+      border: 2.5px solid var(--seal);
       border-radius: 50%;
       content: "";
-      height: 14px;
-      left: -25px;
+      height: 13px;
+      left: -32px;
       position: absolute;
-      top: 18px;
-      width: 14px;
+      top: 24px;
+      width: 13px;
     }
 
-    .person.pending::before {
-      border-color: var(--gold);
+    .gen.origin::before { border-color: var(--gold); }
+    .gen.current::before { background: var(--seal); }
+
+    .gen-role {
+      color: var(--seal-strong);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
-    .person h3 {
-      font-size: 18px;
-      line-height: 1.25;
+    .gen h3 {
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-top: 6px;
     }
 
-    .person p {
+    .gen p {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 14.5px;
+      margin-top: 7px;
+      max-width: 58ch;
     }
 
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 13px; }
 
-    .tag {
+    .status {
+      align-items: center;
       border-radius: 999px;
       display: inline-flex;
+      font-family: var(--mono);
       font-size: 11px;
-      font-weight: 850;
-      line-height: 1;
-      padding: 6px 8px;
-      text-transform: uppercase;
-      white-space: normal;
+      font-weight: 600;
+      gap: 6px;
+      letter-spacing: .02em;
+      padding: 4px 10px 4px 8px;
+      white-space: nowrap;
     }
 
-    .tag.confirmed {
-      background: #e4f1e9;
-      color: var(--green-dark);
+    .status::before {
+      border-radius: 50%;
+      content: "";
+      flex: 0 0 auto;
+      height: 6px;
+      width: 6px;
     }
 
-    .tag.strong {
-      background: #eef3fb;
-      color: var(--blue);
-    }
+    .status.ok { background: var(--ok-bg); color: var(--ok); }
+    .status.ok::before { background: var(--ok); }
+    .status.pending { background: var(--pending-bg); color: var(--pending); }
+    .status.pending::before { background: var(--pending); }
+    .status.gap { background: var(--gap-bg); color: var(--seal-strong); }
+    .status.gap::before { background: var(--seal); }
+    .status.na { background: transparent; border: 1px dashed var(--line-strong); color: var(--na); }
+    .status.na::before { display: none; }
 
-    .tag.pending {
-      background: #fff3d8;
-      color: #765013;
-    }
+    /* ---------- Status table ---------- */
+    .table-scroll { -webkit-overflow-scrolling: touch; overflow-x: auto; }
 
-    .tag.gap {
-      background: #f8e7e8;
-      color: var(--red);
-    }
-
-    .evidence-grid,
-    .confidence-grid,
-    .next-grid,
-    .salarini-proof-grid,
-    .children-grid {
-      display: grid;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .evidence-card,
-    .confidence-card,
-    .next-card {
+    .status-table {
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: 0 8px 24px rgba(23, 33, 43, .05);
-      min-width: 0;
+      border-collapse: collapse;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      font-variant-numeric: tabular-nums;
+      min-width: 620px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .status-table caption { text-align: left; }
+
+    .status-table th, .status-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 13px 16px;
+      text-align: left;
+    }
+
+    .status-table thead th {
+      background: var(--surface-2);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .status-table tbody tr:last-child td { border-bottom: none; }
+
+    .status-table .who { font-weight: 650; }
+    .status-table .role { color: var(--muted); display: block; font-size: 12.5px; font-weight: 400; margin-top: 1px; }
+
+    .legend {
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 13px;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .legend span { align-items: center; display: inline-flex; gap: 7px; }
+    .legend i { border-radius: 50%; display: inline-block; height: 8px; width: 8px; }
+    .legend i.ok { background: var(--ok); }
+    .legend i.pending { background: var(--pending); }
+    .legend i.gap { background: var(--seal); }
+    .legend i.na { background: transparent; border: 1px dashed var(--line-strong); }
+
+    /* ---------- Evidence grid ---------- */
+    .exhibits { display: grid; gap: 18px; }
+
+    .exhibit {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
       overflow: hidden;
     }
 
-    .evidence-card figure {
-      background: #edf1ef;
-      margin: 0;
-      max-width: 100%;
-      overflow-x: auto;
-    }
+    .exhibit figure { background: var(--surface-2); margin: 0; }
 
-    .evidence-card img {
-      min-width: 520px;
-      width: 100%;
-    }
+    .exhibit img { width: 100%; }
 
-    .evidence-body,
-    .confidence-card,
-    .next-card {
-      padding: 15px;
-    }
+    .exhibit-body { padding: 18px 20px 20px; }
 
-    .eyebrow {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .04em;
-      margin-bottom: 6px;
+    .exhibit-tag {
+      color: var(--gold);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .06em;
       text-transform: uppercase;
     }
 
-    .evidence-body h3,
-    .confidence-card h3,
-    .next-card h3 {
-      font-size: 17px;
+    .exhibit h3 {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 600;
       line-height: 1.28;
-      margin-bottom: 8px;
+      margin-top: 7px;
     }
 
-    .evidence-body p,
-    .confidence-card p,
-    .next-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
+    .exhibit p { color: var(--muted); font-size: 14px; margin-top: 8px; }
 
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-    }
+    .exhibit-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 14px; }
 
-    .button-link {
+    .btn {
       align-items: center;
-      background: var(--green);
-      border: 1px solid var(--green);
-      border-radius: 8px;
-      color: #fff;
+      background: var(--ink);
+      border: 1px solid var(--ink);
+      border-radius: 7px;
+      color: var(--paper);
       display: inline-flex;
       font-size: 13px;
-      font-weight: 800;
-      min-height: 40px;
-      padding: 9px 12px;
+      font-weight: 600;
+      min-height: 38px;
+      padding: 8px 13px;
       text-decoration: none;
     }
 
-    .button-link.secondary {
-      background: var(--surface);
-      color: var(--green-dark);
+    .btn:hover { background: var(--seal-strong); border-color: var(--seal-strong); color: #fff; }
+
+    .btn.ghost {
+      background: transparent;
+      border-color: var(--line-strong);
+      color: var(--ink);
     }
 
-    .confidence-card {
-      border-left: 5px solid var(--green);
-    }
+    .btn.ghost:hover { background: var(--surface-2); color: var(--ink); }
 
-    .confidence-card.strong {
-      border-left-color: var(--blue);
-    }
+    /* ---------- Pending list ---------- */
+    .pending-list { display: grid; gap: 10px; }
 
-    .confidence-card.pending {
-      border-left-color: var(--gold);
-    }
-
-    .confidence-card.gap {
-      border-left-color: var(--red);
-    }
-
-    .callout {
-      background: var(--surface-soft);
-      border: 1px solid #cad9cf;
-      border-radius: 8px;
-      margin-top: 18px;
-      padding: 16px;
-    }
-
-    .callout strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .callout p {
-      color: #3d4a45;
-      font-size: 14px;
-    }
-
-    #salarini-foco {
-      background: #ffffff;
-    }
-
-    .focus-panel {
-      display: grid;
-      gap: 20px;
-      min-width: 0;
-    }
-
-    .focus-header {
-      display: grid;
-      gap: 8px;
-    }
-
-    .focus-header h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
-      line-height: 1.1;
-    }
-
-    .focus-header p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .salarini-storyline {
-      display: grid;
-      gap: 12px;
-      position: relative;
-    }
-
-    .salarini-storyline::before {
-      background: linear-gradient(180deg, var(--blue), var(--green));
-      bottom: 24px;
-      content: "";
-      left: 20px;
-      position: absolute;
-      top: 24px;
-      width: 2px;
-    }
-
-    .relation-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      display: grid;
-      gap: 10px;
-      margin-left: 42px;
-      min-width: 0;
-      padding: 14px;
-      position: relative;
-    }
-
-    .relation-card::before {
-      align-items: center;
-      background: var(--green-dark);
-      border: 3px solid #ffffff;
-      border-radius: 50%;
-      color: #ffffff;
-      content: attr(data-step);
-      display: flex;
-      font-size: 12px;
-      font-weight: 900;
-      height: 34px;
-      justify-content: center;
-      left: -39px;
-      position: absolute;
-      top: 14px;
-      width: 34px;
-    }
-
-    .relation-card.current::before {
-      background: var(--blue);
-    }
-
-    .relation-card h3 {
-      font-size: 18px;
-      line-height: 1.2;
-    }
-
-    .relation-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .relation-meta {
-      display: grid;
-      gap: 8px;
-    }
-
-    .relation-meta div {
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      min-width: 0;
-      padding: 9px 10px;
-    }
-
-    .relation-meta strong {
-      color: var(--green-dark);
-      display: block;
-      font-size: 11px;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-    }
-
-    .relation-meta span {
-      color: #33404c;
-      display: block;
-      font-size: 13px;
-      font-weight: 750;
-      margin-top: 2px;
-      overflow-wrap: anywhere;
-    }
-
-    .salarini-history {
-      background: var(--surface-soft);
-      border: 1px solid #cad9cf;
-      border-radius: 8px;
-      display: grid;
-      gap: 10px;
-      padding: 14px;
-    }
-
-    .history-row {
-      display: grid;
-      gap: 7px;
-      grid-template-columns: 58px 1fr;
-      min-width: 0;
-    }
-
-    .history-row time {
-      color: var(--green-dark);
-      font-size: 13px;
-      font-weight: 900;
-      line-height: 1.25;
-    }
-
-    .history-row span {
-      color: #3d4a45;
-      font-size: 13px;
-      min-width: 0;
-      overflow-wrap: anywhere;
-    }
-
-    .salarini-proof {
-      border: 1px solid var(--line);
-      border-left: 5px solid var(--green);
-      border-radius: 8px;
-      min-width: 0;
-      padding: 13px;
-    }
-
-    .salarini-proof.strong {
-      border-left-color: var(--blue);
-    }
-
-    .salarini-proof.pending {
-      border-left-color: var(--gold);
-    }
-
-    .salarini-proof.gap {
-      border-left-color: var(--red);
-    }
-
-    .salarini-proof strong {
-      display: block;
-      font-size: 17px;
-      line-height: 1.25;
-    }
-
-    .salarini-proof span {
-      color: var(--muted);
-      display: block;
-      font-size: 13px;
-      margin-top: 5px;
-    }
-
-    .children-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .children-board {
-      display: grid;
-      gap: 12px;
-    }
-
-    .children-board h3 {
-      font-size: 19px;
-      line-height: 1.22;
-    }
-
-    .children-board p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .child-chip {
-      align-items: center;
-      background: #f8faf8;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      display: flex;
-      gap: 8px;
-      min-height: 46px;
-      min-width: 0;
-      padding: 9px 10px;
-    }
-
-    .child-chip::before {
-      border-radius: 50%;
-      content: "";
-      flex: 0 0 10px;
-      height: 10px;
-      width: 10px;
-    }
-
-    .child-chip.confirmed::before {
-      background: var(--green);
-    }
-
-    .child-chip.strong::before {
-      background: var(--blue);
-    }
-
-    .child-chip.pending::before {
-      background: var(--gold);
-    }
-
-    .child-chip span {
-      display: block;
-      font-size: 13px;
-      font-weight: 800;
-      line-height: 1.2;
-      min-width: 0;
-      overflow-wrap: anywhere;
-    }
-
-    .child-chip small {
-      color: var(--muted);
-      display: block;
-      font-size: 11px;
-      font-weight: 700;
-      line-height: 1.25;
-      margin-top: 2px;
-    }
-
-    .tree-wrap {
+    .pending-item {
       background: var(--surface);
       border: 1px solid var(--line);
+      border-left: 3px solid var(--seal);
       border-radius: 8px;
-      box-shadow: var(--shadow);
-      overflow-x: auto;
-      padding: 8px;
+      padding: 14px 16px;
     }
 
-    .tree-wrap svg {
-      display: block;
-      height: auto;
-      min-width: 340px;
-      width: 100%;
+    .pending-item strong { display: block; font-size: 15px; }
+    .pending-item span { color: var(--muted); display: block; font-size: 13.5px; margin-top: 4px; }
+
+    /* ---------- Context (secondary) ---------- */
+    .context-box {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 20px 22px;
     }
 
-    .tree-wrap-large svg {
-      min-width: 720px;
-      max-width: 790px;
-      width: 100%;
+    .context-box p { color: var(--ink); font-size: 14.5px; }
+    .context-box p + p { margin-top: 10px; color: var(--muted); }
+
+    .context-box .btn { margin-top: 16px; }
+
+    /* ---------- Footer ---------- */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0 44px;
     }
 
-    .tree-col-label {
-      fill: var(--muted);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-
-    .tree-link {
-      stroke-width: 2;
-    }
-
-    .tree-link.confirmed {
-      stroke: var(--green);
-    }
-
-    .tree-link.strong {
-      stroke: var(--blue);
-    }
-
-    .tree-link.uncertain {
-      stroke: var(--gold);
-      stroke-dasharray: 4 3;
-    }
-
-    .tree-node rect {
-      fill: var(--surface);
-      stroke-width: 2;
-    }
-
-    .tree-link-node {
-      cursor: pointer;
-    }
-
-    .tree-link-node .tree-node rect {
-      transition: fill .15s ease;
-    }
-
-    .tree-link-node:hover .tree-node rect,
-    .tree-link-node:focus .tree-node rect {
-      fill: var(--surface-soft);
-    }
-
-    .tree-link-node .tree-tag {
-      text-decoration: underline;
-    }
-
-    .tree-node.confirmed rect {
-      stroke: var(--green);
-    }
-
-    .tree-node.strong rect {
-      stroke: var(--blue);
-    }
-
-    .tree-node.pending rect {
-      stroke: var(--gold);
-      stroke-dasharray: 5 3;
-    }
-
-    .tree-node.gap rect {
-      stroke: var(--red);
-      stroke-dasharray: 5 3;
-    }
-
-    .tree-link.gap {
-      stroke: var(--red);
-      stroke-dasharray: 4 3;
-    }
-
-    .tree-node.root rect {
-      fill: var(--green-dark);
-      stroke: var(--green-dark);
-    }
-
-    .tree-node.root .tree-name,
-    .tree-node.root .tree-caption {
-      fill: #ffffff;
-    }
-
-    .tree-name {
-      fill: var(--ink);
-      font-size: 11.5px;
-      font-weight: 750;
-    }
-
-    .tree-caption {
-      fill: var(--muted);
-      font-size: 10px;
-    }
-
-    .tree-tag {
-      fill: var(--muted);
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: .03em;
-      text-transform: uppercase;
-    }
-
-    .tree-node.confirmed .tree-tag {
-      fill: var(--green-dark);
-    }
-
-    .tree-node.strong .tree-tag {
-      fill: var(--blue);
-    }
-
-    .tree-node.pending .tree-tag {
-      fill: #765013;
-    }
-
-    .tree-node.gap .tree-tag {
-      fill: var(--red);
-    }
-
-    .legend-swatch.confirmed {
-      fill: #e4f1e9;
-      stroke: var(--green);
-    }
-
-    .legend-swatch.strong {
-      fill: #eef3fb;
-      stroke: var(--blue);
-    }
-
-    .legend-swatch.pending {
-      fill: #fff3d8;
-      stroke: var(--gold);
-      stroke-dasharray: 3 2;
-    }
-
-    .legend-swatch.gap {
-      fill: #f8e7e8;
-      stroke: var(--red);
-      stroke-dasharray: 3 2;
-    }
-
-    .legend-swatch {
-      stroke-width: 1.5;
-    }
-
-    .tree-note {
+    footer p {
       color: var(--muted);
       font-size: 13px;
-      margin-top: 14px;
+      max-width: 62ch;
     }
 
-    .footer {
-      background: #17212b;
-      color: #f8f6f0;
-      padding: 28px 18px 34px;
+    footer p + p { margin-top: 8px; }
+
+    .exhibit.text-only { display: flex; }
+    .exhibit.text-only .exhibit-body { display: flex; flex-direction: column; justify-content: center; }
+
+    @media (min-width: 640px) {
+      .cover h1 { font-size: 58px; }
+      .exhibits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .exhibit.text-only { grid-column: 1 / -1; }
     }
 
-    .footer p {
-      color: #d5dad7;
-      font-size: 14px;
-      max-width: 720px;
-    }
-
-    .footer a {
-      color: #ffffff;
-      text-decoration-color: rgba(255,255,255,.4);
-    }
-
-    @media (max-width: 430px) {
-      h1 {
-        font-size: 36px;
-      }
-
-      .hero-subtitle {
-        font-size: 17px;
-      }
-
-      .section-heading h2 {
-        font-size: 26px;
-      }
-
-      .stat-row {
-        gap: 8px;
-      }
-
-      .stat,
-      .status-strip {
-        padding: 12px;
-      }
-
-      .hero::before {
-        background-position: 42% 28px;
-        background-size: 720px auto;
-        opacity: .05;
-      }
-    }
-
-    @media (min-width: 720px) {
-      .hero {
-        min-height: 620px;
-        padding-top: 42px;
-      }
-
-      h1 {
-        font-size: 64px;
-      }
-
-      .hero-meta {
-        max-width: 680px;
-      }
-
-      .stat-row {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .children-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .relation-meta {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .salarini-history {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      section {
-        padding-bottom: 52px;
-        padding-top: 52px;
-      }
-
-      .section-heading h2 {
-        font-size: 38px;
-      }
-
-      .lineage {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-      }
-
-      .lineage::before {
-        display: none;
-      }
-
-      .person {
-        margin-left: 0;
-        padding-top: 42px;
-      }
-
-      .person::before {
-        left: 15px;
-        top: 16px;
-      }
-
-      .person::after {
-        background: var(--line-strong);
-        content: "";
-        height: 2px;
-        left: 33px;
-        position: absolute;
-        right: -15px;
-        top: 25px;
-      }
-
-      .person:last-child::after {
-        display: none;
-      }
-
-      .evidence-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .confidence-grid,
-      .next-grid,
-      .salarini-proof-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .evidence-card.featured {
-        grid-column: 1 / -1;
-      }
+    @media print {
+      .nav { display: none; }
+      body { background: #fff; color: #000; }
+      .gen, .exhibit, .status-table, .pending-item, .context-box { box-shadow: none; }
+      a { color: #000; text-decoration: underline; }
+      section { padding: 26px 0; break-inside: avoid; }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="hero" id="topo">
-      <div class="hero-inner">
-        <p class="kicker">Memoria genealogica em construcao</p>
-        <h1>Arvore paterna: Pompermayer &amp; <wbr>Vezzoni</h1>
-        <p class="hero-subtitle">Uma pagina mobile-first para acompanhar as duas linhas da arvore paterna. A linha Salarini/Pompermayer ganhou um painel proprio: Carlos + Elvira ja estao sustentados por registros de Gervasio, Jose, Joao e Edylio, e a pagina 118 virou checklist dos filhos ainda sem certidao.</p>
+  <header class="cover">
+    <div class="wrap">
+      <p class="eyebrow">Dossiê genealógico · reconhecimento de cidadania italiana</p>
+      <h1>Família Vezzoni</h1>
+      <p class="dates">Gussola, 1869 — Espírito Santo, hoje</p>
+      <p class="cover-sub">Linha direta de descendência de Vincenzo Vezzoni, nascido em Gussola (província de Cremona, Lombardia), até Marcus Vinicius Santos Salarini — com a documentação civil reunida até aqui.</p>
+      <div class="cover-meta">
+        <span><strong>5</strong> gerações documentadas</span>
+        <span><strong>4</strong> certidões primárias em mãos</span>
+        <span><strong>Atualizado</strong> em 21 de julho de 2026</span>
+      </div>
+    </div>
+  </header>
 
-        <div class="hero-meta" aria-label="Resumo da pesquisa">
-          <div class="stat-row">
-            <div class="stat">
-              <strong>1874</strong>
-              <span>Nascimento indicado para Ricardo Pompermayer</span>
+  <nav class="nav" aria-label="Navegação do dossiê">
+    <div class="nav-inner">
+      <a href="#linha">Linha de descendência</a>
+      <a href="#documentos">Documentos</a>
+      <a href="#evidencias">Evidências</a>
+      <a href="#pendencias">Pendências</a>
+      <a href="#contexto">Contexto adicional</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="linha">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">De Gussola até você</p>
+          <h2>A linha de descendência</h2>
+          <p>Cinco gerações, da Itália ao Espírito Santo. Cada bloco resume o que já se sabe e o estado da documentação daquela geração — o detalhe completo está na tabela e nas evidências logo abaixo.</p>
+        </div>
+
+        <div class="chain">
+          <article class="gen origin">
+            <p class="gen-role">Itália · trisavós</p>
+            <h3>Vincenzo Vezzoni &amp; Luigia Orsola Cetto</h3>
+            <p>Vincenzo nasceu em 29 de maio de 1869, em Gussola (Cremona, Lombardia). Imigrou sozinho para o Brasil em 1890, desembarcando no Espírito Santo, onde se casou com Luigia Orsola Cetto.</p>
+            <div class="chip-row">
+              <span class="status ok">Nascimento — obtido</span>
+              <span class="status pending">Casamento — pendente</span>
             </div>
-            <div class="stat">
-              <strong>1869</strong>
-              <span>Nascimento de Vincenzo Vezzoni confirmado em Gussola, Italia</span>
+          </article>
+
+          <article class="gen">
+            <p class="gen-role">Bisavós</p>
+            <h3>Stefano (Estevão) Vezzoni &amp; Barbara Bissa</h3>
+            <p>Filho de Vincenzo. Casou com Barbara Bissa em 20 de julho de 1918, em Iriritiba (hoje Anchieta-ES). Faleceu em 31 de outubro de 1970.</p>
+            <div class="chip-row">
+              <span class="status pending">Nascimento — pendente</span>
+              <span class="status ok">Casamento — obtido</span>
+              <span class="status ok">Óbito — obtido</span>
             </div>
-            <div class="stat">
-              <strong>1918</strong>
-              <span>Casamento confirmado de Stefano e Barbara</span>
+          </article>
+
+          <article class="gen">
+            <p class="gen-role">Avós</p>
+            <h3>Olendina Thereza Vezzoni &amp; Gervásio Salarini</h3>
+            <p>Filha de Stefano e Barbara, nasceu em 13 de julho de 1930. Casou com Gervásio Salarini em 16 de novembro de 1948.</p>
+            <div class="chip-row">
+              <span class="status ok">Nascimento — obtido</span>
+              <span class="status ok">Casamento — obtido</span>
+              <span class="status pending">Óbito — em obtenção</span>
             </div>
-            <div class="stat">
-              <strong>2</strong>
-              <span>Linhas paternas em pesquisa: avo e avo</span>
+          </article>
+
+          <article class="gen">
+            <p class="gen-role">Pai</p>
+            <h3>Benício Vezzoni Salarini</h3>
+            <p>Filho de Gervásio e Olendina, nasceu em 16 de março de 1951, em Dois Irmãos (Iriritiba, Anchieta-ES). Vivo.</p>
+            <div class="chip-row">
+              <span class="status ok">Nascimento — obtido</span>
+              <span class="status ok">Casamento — obtido</span>
             </div>
+          </article>
+
+          <article class="gen current">
+            <p class="gen-role">Requerente</p>
+            <h3>Marcus Vinicius Santos Salarini</h3>
+            <p>Você.</p>
+            <div class="chip-row">
+              <span class="status ok">Nascimento — obtido</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="documentos">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Nascimento · casamento · óbito</p>
+          <h2>Documentos por pessoa</h2>
+          <p>O mesmo recorte pedido pela advocacia: uma linha por pessoa, com o que já está em mãos e o que ainda falta.</p>
+        </div>
+
+        <div class="table-scroll">
+          <table class="status-table">
+            <thead>
+              <tr>
+                <th scope="col">Pessoa</th>
+                <th scope="col">Nascimento</th>
+                <th scope="col">Casamento</th>
+                <th scope="col">Óbito</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="who">Vincenzo Vezzoni<span class="role">trisavô · Itália</span></td>
+                <td><span class="status ok">Obtido</span></td>
+                <td><span class="status pending">Pendente</span></td>
+                <td><span class="status pending">Pendente</span></td>
+              </tr>
+              <tr>
+                <td class="who">Luigia Orsola Cetto<span class="role">trisavó · Itália</span></td>
+                <td><span class="status pending">Pendente</span></td>
+                <td><span class="status pending">Pendente</span></td>
+                <td><span class="status pending">Pendente</span></td>
+              </tr>
+              <tr>
+                <td class="who">Stefano (Estevão) Vezzoni<span class="role">bisavô</span></td>
+                <td><span class="status pending">Pendente</span></td>
+                <td><span class="status ok">Obtido</span></td>
+                <td><span class="status ok">Obtido</span></td>
+              </tr>
+              <tr>
+                <td class="who">Barbara Bissa<span class="role">bisavó</span></td>
+                <td><span class="status pending">Pendente</span></td>
+                <td><span class="status ok">Obtido</span></td>
+                <td><span class="status pending">Pendente</span></td>
+              </tr>
+              <tr>
+                <td class="who">Olendina Thereza Vezzoni<span class="role">avó</span></td>
+                <td><span class="status ok">Obtido</span></td>
+                <td><span class="status ok">Obtido</span></td>
+                <td><span class="status pending">Em obtenção</span></td>
+              </tr>
+              <tr>
+                <td class="who">Gervásio Salarini<span class="role">avô</span></td>
+                <td><span class="status pending">Em obtenção</span></td>
+                <td><span class="status ok">Obtido</span></td>
+                <td><span class="status pending">Em obtenção</span></td>
+              </tr>
+              <tr>
+                <td class="who">Benício Vezzoni Salarini<span class="role">pai</span></td>
+                <td><span class="status ok">Obtido</span></td>
+                <td><span class="status ok">Obtido</span></td>
+                <td><span class="status na">Não se aplica</span></td>
+              </tr>
+              <tr>
+                <td class="who">Marcus Vinicius Santos Salarini<span class="role">requerente</span></td>
+                <td><span class="status ok">Obtido</span></td>
+                <td><span class="status na">Não se aplica</span></td>
+                <td><span class="status na">Não se aplica</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legend" aria-hidden="true">
+          <span><i class="ok"></i> Obtido</span>
+          <span><i class="pending"></i> Pendente / em obtenção</span>
+          <span><i class="na"></i> Não se aplica</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidencias">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Documentos anexados</p>
+          <h2>Evidências</h2>
+          <p>As certidões e registros primários já reunidos, com a transcrição de cada um.</p>
+        </div>
+
+        <div class="exhibits">
+          <article class="exhibit">
+            <figure>
+              <img src="VZ-004/2026-07-21_portale-antenati_gussola-1869-nascimento-vincenzo-vezzoni.jpg" alt="Página do registro de nascimentos de Gussola, 1869, ato n. 62, Vincenzo Vezzoni">
+            </figure>
+            <div class="exhibit-body">
+              <p class="exhibit-tag">Archivio di Stato di Cremona · 1869</p>
+              <h3>Nascimento de Vincenzo Vezzoni</h3>
+              <p>Ato n. 62 do registro de nascimentos de Gussola: nascido em 29/05/1869, filho de Giacomo Vezzoni e de sua esposa, sobrenome Barili.</p>
+              <div class="exhibit-links">
+                <a class="btn" href="VZ-004/2026-07-21_portale-antenati_gussola-1869-nascimento-vincenzo-vezzoni.md">Transcrição</a>
+                <a class="btn ghost" href="https://antenati.cultura.gov.it/ark:/12657/an_ua2463635/04ryB9R">Portale Antenati</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="exhibit">
+            <figure>
+              <img src="VZ-001/2026-07-03_cartorio-alto-pongal_certidao-casamento-estevao-vezzoni-barbara-bissa.png" alt="Certidão de casamento de Estevão Vezzoni e Barbara Bissa, 1918">
+            </figure>
+            <div class="exhibit-body">
+              <p class="exhibit-tag">Cartório de Vila de Alto Pongal · 1918</p>
+              <h3>Casamento de Stefano Vezzoni e Barbara Bissa</h3>
+              <p>Certidão inteiro teor, 20/07/1918, Iriritiba (Anchieta-ES), com averbação de retificação judicial de 2018 para os nomes italianos.</p>
+              <div class="exhibit-links">
+                <a class="btn" href="VZ-001/2026-07-03_certidao-casamento_estevao-vezzoni-barbara-bissa.md">Transcrição</a>
+                <a class="btn ghost" href="VZ-001/2026-07-03_cartorio-alto-pongal_retificacao-casamento-vezzoni-nomes-italianos.png">Retificação</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="exhibit">
+            <figure>
+              <img src="VZ-002/2026-07-03_apees-projeto-imigrantes_vincenzo-vezzoni-registro-entrada.jpg" alt="Registro de entrada de imigrante de Vincenzo Vezzoni, 1890">
+            </figure>
+            <div class="exhibit-body">
+              <p class="exhibit-tag">Arquivo Público do Espírito Santo · 1890</p>
+              <h3>Imigração de Vincenzo Vezzoni</h3>
+              <p>Registro de entrada de imigrante: Vincenzo, filho de Giacomo, natural de Gussola, embarcou sozinho em Gênova e desembarcou em Vitória-ES em 1890.</p>
+              <div class="exhibit-links">
+                <a class="btn" href="VZ-002/2026-07-03_apees-projeto-imigrantes_vincenzo-vezzoni.md">Transcrição</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="exhibit text-only">
+            <div class="exhibit-body">
+              <p class="exhibit-tag">Fichário de família · certidões civis</p>
+              <h3>Óbito de Stefano, nascimento de Olendina, casamento de Gervásio e Olendina, nascimento de Benício</h3>
+              <p>Um único arquivo reúne quatro certidões inteiro teor: óbito de Stefano Vezzoni (1970), nascimento de Olendina (1930), casamento de Gervásio e Olendina (1948) e nascimento de Benício (1951).</p>
+              <div class="exhibit-links">
+                <a class="btn" href="DOC-001/2026-07-03_fichario3_certidoes-civis.md">Resumo por página</a>
+                <a class="btn ghost" href="DOC-001/fichario3.pdf">Abrir PDF</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pendencias">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Para fechar o processo</p>
+          <h2>O que ainda falta</h2>
+          <p>Lista curta e direta do que continua em aberto, na ordem em que aparece na linha de descendência.</p>
+        </div>
+
+        <div class="pending-list">
+          <div class="pending-item">
+            <strong>Casamento de Vincenzo Vezzoni e Luigia Orsola Cetto</strong>
+            <span>Buscar no Archivio di Stato di Cremona (se na Itália) ou nos registros civis do Espírito Santo de 1891 (se no Brasil).</span>
           </div>
-          <div class="status-strip">
-            <strong>Novidade de 2026-07-21: a certidao de nascimento de Vincenzo Vezzoni foi encontrada em Gussola (Italia), confirmando nascimento em 29/05/1869 e o pai Giacomo Vezzoni. A linha Salarini/Pompermayer tambem nao esta mais no escuro: Elvira foi ligada a Ricardo + Justina por indice civil, Joao tem certidao completa, Edylio tem obito localizado e a pagina 118 abriu a lista de filhos para novas certidoes.</strong>
-            <span>Fonte-base: memoria_genealogica_pompermayer_COMPLETA.md, evidencias IT-001 a IT-004, VZ-001, VZ-002, VZ-004 e certidoes/relatorios ja descritos na pesquisa.</span>
+          <div class="pending-item">
+            <strong>Nascimento de Stefano (Estevão) Vezzoni e de Barbara Bissa</strong>
+            <span>Ainda não localizados. A certidão de casamento de 1918 traz as idades de ambos, o que ajuda a estimar o período de nascimento.</span>
+          </div>
+          <div class="pending-item">
+            <strong>Nascimento e óbito de Gervásio Salarini</strong>
+            <span>Em obtenção pelos primos.</span>
+          </div>
+          <div class="pending-item">
+            <strong>Óbito de Olendina Thereza Vezzoni</strong>
+            <span>Em obtenção pelos primos.</span>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <nav class="nav" aria-label="Navegacao da pagina">
-      <div class="nav-inner">
-        <a href="#arvore">Arvore</a>
-        <a href="#salarini-foco">Salarini</a>
-        <a href="#linha">Linha do avo</a>
-        <a href="#vezzoni">Linha da avo</a>
-        <a href="#evidencias">Evidencias</a>
-        <a href="#confianca">Confianca</a>
-        <a href="#proximas">Proximas buscas</a>
+    <section id="contexto">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Fora do escopo do processo</p>
+          <h2>Contexto adicional: a linha Salarini/Pompermayer</h2>
+          <p>Gervásio Salarini — avô paterno pelo lado que não carrega a cidadania italiana em pauta — descende de Carlos Salarini e Elvira Pompermayer. Essa linha não é necessária para o reconhecimento de cidadania, mas segue documentada como pesquisa complementar da família.</p>
+        </div>
+
+        <div class="context-box">
+          <p>Elvira Pompermayer era filha de Ricardo Pompermayer e Justina Bressanelli, confirmados por registro civil brasileiro. O pai de Ricardo, Cristano Pompermayer, veio de Roncegno, no Trentino — uma origem italiana distinta da linha Vezzoni, sem relação com o processo atual.</p>
+          <p>O pai de Carlos Salarini, Giovanni Salarini, também nasceu na Itália, em Felonica (província de Mantova) — outra origem italiana na árvore, também fora do escopo deste dossiê.</p>
+          <a class="btn ghost" href="pesquisa-linha-paterna.html">Ver pesquisa completa desta linha</a>
+        </div>
       </div>
-    </nav>
-
-    <main>
-      <section id="arvore">
-        <div class="section-inner">
-          <div class="section-heading">
-            <h2>Visao geral da arvore</h2>
-            <p>As duas linhas paternas, da Italia ate voce, em um so diagrama. Role para baixo para ver os detalhes e as evidencias de cada elo.</p>
-          </div>
-
-          <div class="tree-wrap tree-wrap-large">
-            <svg viewBox="0 0 790 610" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama completo da arvore genealogica de Marcus Vinicius Santos Salarini, com as quatro linhas de bisavos ate a Italia">
-              <text x="95" y="102" class="tree-col-label" text-anchor="middle">Salarini</text>
-              <text x="285" y="102" class="tree-col-label" text-anchor="middle">Pompermayer</text>
-              <text x="475" y="102" class="tree-col-label" text-anchor="middle">Vezzoni</text>
-              <text x="665" y="102" class="tree-col-label" text-anchor="middle">Bissa</text>
-
-              <!-- Geracao 5 -> Geracao 4, dentro de cada coluna -->
-              <line x1="95" y1="84" x2="95" y2="108" class="tree-link strong"/>
-              <line x1="285" y1="84" x2="285" y2="108" class="tree-link strong"/>
-              <line x1="475" y1="84" x2="475" y2="108" class="tree-link confirmed"/>
-              <line x1="665" y1="84" x2="665" y2="108" class="tree-link gap"/>
-
-              <!-- Geracao 4 -> Geracao 3 (convergencia para os dois casais bisavos) -->
-              <line x1="95" y1="182" x2="190" y2="206" class="tree-link strong"/>
-              <line x1="285" y1="182" x2="190" y2="206" class="tree-link strong"/>
-              <line x1="475" y1="182" x2="570" y2="206" class="tree-link confirmed"/>
-              <line x1="665" y1="182" x2="570" y2="206" class="tree-link confirmed"/>
-
-              <!-- Geracao 3 -> Geracao 2 (avo e avo) -->
-              <line x1="190" y1="280" x2="190" y2="304" class="tree-link confirmed"/>
-              <line x1="570" y1="280" x2="570" y2="304" class="tree-link confirmed"/>
-
-              <!-- Geracao 2 -> Benicio -->
-              <line x1="190" y1="378" x2="380" y2="402" class="tree-link confirmed"/>
-              <line x1="570" y1="378" x2="380" y2="402" class="tree-link confirmed"/>
-
-              <!-- Benicio -> Marcus -->
-              <line x1="380" y1="462" x2="380" y2="486" class="tree-link confirmed"/>
-
-              <!-- GERACAO 5: tetravos -->
-              <g class="tree-node strong">
-                <rect x="10" y="10" width="170" height="74" rx="8"/>
-                <text x="95" y="32" text-anchor="middle" class="tree-name">Angelo Salarini</text>
-                <text x="95" y="47" text-anchor="middle" class="tree-name">+ Margherita Moreschi</text>
-                <text x="95" y="64" text-anchor="middle" class="tree-caption">Felonica, Mantova, Italia</text>
-                <text x="95" y="77" text-anchor="middle" class="tree-tag">Pista forte</text>
-              </g>
-
-              <g class="tree-node strong">
-                <rect x="200" y="10" width="170" height="74" rx="8"/>
-                <text x="285" y="32" text-anchor="middle" class="tree-name">Cristano Pompermayer</text>
-                <text x="285" y="47" text-anchor="middle" class="tree-name">+ Anna Hueller</text>
-                <text x="285" y="64" text-anchor="middle" class="tree-caption">Roncegno / Marter, Italia</text>
-                <text x="285" y="77" text-anchor="middle" class="tree-tag">Pista forte</text>
-              </g>
-
-              <g class="tree-node confirmed">
-                <rect x="390" y="10" width="170" height="74" rx="8"/>
-                <text x="475" y="32" text-anchor="middle" class="tree-name">Giacomo Vezzoni</text>
-                <text x="475" y="47" text-anchor="middle" class="tree-name">+ [Rosa Maria] Barili</text>
-                <text x="475" y="64" text-anchor="middle" class="tree-caption">Gussola, Cremona, Italia</text>
-                <text x="475" y="77" text-anchor="middle" class="tree-tag">Confirmada</text>
-              </g>
-
-              <g class="tree-node gap">
-                <rect x="580" y="10" width="170" height="74" rx="8" stroke-dasharray="5 3"/>
-                <text x="665" y="32" text-anchor="middle" class="tree-name">Origem de Estefano</text>
-                <text x="665" y="47" text-anchor="middle" class="tree-name">Bissa + Maria Libardi</text>
-                <text x="665" y="64" text-anchor="middle" class="tree-caption">Italia, regiao ainda incerta</text>
-                <text x="665" y="77" text-anchor="middle" class="tree-tag">Lacuna (VZ-003)</text>
-              </g>
-
-              <!-- GERACAO 4: trisavos -->
-              <g class="tree-node strong">
-                <rect x="10" y="108" width="170" height="74" rx="8"/>
-                <text x="95" y="130" text-anchor="middle" class="tree-name">Giovanni Salarini</text>
-                <text x="95" y="145" text-anchor="middle" class="tree-name">+ Teresa Negri (?)</text>
-                <text x="95" y="162" text-anchor="middle" class="tree-caption">Felonica &#8594; Alfredo Chaves-ES</text>
-                <text x="95" y="175" text-anchor="middle" class="tree-tag">Pista forte</text>
-              </g>
-
-              <g class="tree-node strong">
-                <rect x="200" y="108" width="170" height="74" rx="8"/>
-                <text x="285" y="130" text-anchor="middle" class="tree-name">Ricardo Pompermayer</text>
-                <text x="285" y="145" text-anchor="middle" class="tree-name">+ Justina Bressanelli</text>
-                <text x="285" y="175" text-anchor="middle" class="tree-tag">Pista forte</text>
-              </g>
-
-              <g class="tree-node confirmed">
-                <rect x="390" y="108" width="170" height="74" rx="8"/>
-                <text x="475" y="130" text-anchor="middle" class="tree-name">Vincenzo Vezzoni</text>
-                <text x="475" y="145" text-anchor="middle" class="tree-name">+ Luigia Orsola Cetto</text>
-                <text x="475" y="175" text-anchor="middle" class="tree-tag">Confirmada</text>
-              </g>
-
-              <g class="tree-node confirmed">
-                <rect x="580" y="108" width="170" height="74" rx="8"/>
-                <text x="665" y="130" text-anchor="middle" class="tree-name">Estefano Bissa</text>
-                <text x="665" y="145" text-anchor="middle" class="tree-name">+ Maria Libardi</text>
-                <text x="665" y="175" text-anchor="middle" class="tree-tag">Confirmada</text>
-              </g>
-
-              <!-- GERACAO 3: bisavos, casais convergidos -->
-              <a href="#salarini-foco" class="tree-link-node" aria-label="Ver o painel completo da linha Salarini, com os 12 filhos de Carlos e Elvira">
-                <g class="tree-node confirmed">
-                  <rect x="10" y="206" width="360" height="74" rx="8"/>
-                  <text x="190" y="228" text-anchor="middle" class="tree-name">Carlos Salarini + Elvira Pompermayer</text>
-                  <text x="190" y="245" text-anchor="middle" class="tree-caption">Casamento 1896 · 12 filhos (pag. 118): 4 confirmados</text>
-                  <text x="190" y="267" text-anchor="middle" class="tree-tag">Confirmada · toque para ver</text>
-                </g>
-              </a>
-
-              <g class="tree-node confirmed">
-                <rect x="390" y="206" width="360" height="74" rx="8"/>
-                <text x="570" y="228" text-anchor="middle" class="tree-name">Stefano Vezzoni + Barbara Bissa</text>
-                <text x="570" y="245" text-anchor="middle" class="tree-caption">Casamento 20/07/1918, Iriritiba-ES</text>
-                <text x="570" y="267" text-anchor="middle" class="tree-tag">Confirmada</text>
-              </g>
-
-              <!-- GERACAO 2: avos -->
-              <g class="tree-node confirmed">
-                <rect x="95" y="304" width="190" height="74" rx="8"/>
-                <text x="190" y="330" text-anchor="middle" class="tree-name">Gervasio Salarini</text>
-                <text x="190" y="346" text-anchor="middle" class="tree-caption">avo paterno</text>
-                <text x="190" y="363" text-anchor="middle" class="tree-tag">Confirmada</text>
-              </g>
-
-              <g class="tree-node confirmed">
-                <rect x="475" y="304" width="190" height="74" rx="8"/>
-                <text x="570" y="330" text-anchor="middle" class="tree-name">Olendina Th. Vezzoni</text>
-                <text x="570" y="346" text-anchor="middle" class="tree-caption">avo paterna</text>
-                <text x="570" y="363" text-anchor="middle" class="tree-tag">Confirmada</text>
-              </g>
-
-              <!-- GERACAO 1: pai -->
-              <g class="tree-node confirmed">
-                <rect x="280" y="402" width="200" height="60" rx="8"/>
-                <text x="380" y="426" text-anchor="middle" class="tree-name">Benicio Vezzoni Salarini</text>
-                <text x="380" y="442" text-anchor="middle" class="tree-caption">pai</text>
-                <text x="380" y="455" text-anchor="middle" class="tree-tag">Confirmada</text>
-              </g>
-
-              <!-- GERACAO 0: voce -->
-              <g class="tree-node root">
-                <rect x="255" y="486" width="250" height="60" rx="8"/>
-                <text x="380" y="511" text-anchor="middle" class="tree-name">Marcus Vinicius Santos Salarini</text>
-                <text x="380" y="528" text-anchor="middle" class="tree-caption">voce</text>
-              </g>
-
-              <!-- legenda -->
-              <g class="tree-legend">
-                <rect x="20" y="566" width="12" height="12" rx="3" class="legend-swatch confirmed"/>
-                <text x="38" y="576" class="tree-caption">Confirmada por certidao/registro primario</text>
-                <rect x="20" y="586" width="12" height="12" rx="3" class="legend-swatch strong"/>
-                <text x="38" y="596" class="tree-caption">Pista forte por indice/fonte oficial</text>
-                <rect x="420" y="566" width="12" height="12" rx="3" class="legend-swatch gap"/>
-                <text x="438" y="576" class="tree-caption">Lacuna: origem ainda nao encontrada</text>
-              </g>
-            </svg>
-          </div>
-
-          <p class="tree-note">Arvore completa a partir de voce: quatro linhas de bisavos, todas com pai e mae confirmados ou em pista forte, exceto os pais de Estefano Bissa e Maria Libardi (pendencia VZ-003, ainda sem origem italiana identificada) e a mae de Carlos Salarini (pendencia SA-002: a arvore colaborativa aponta Teresa Negri, mas o registro de nascimento do proprio Carlos ainda nao foi localizado). Toque no card "Carlos Salarini + Elvira Pompermayer" para ver o painel completo da linha Salarini, com os 12 filhos do casal.</p>
-        </div>
-      </section>
-
-      <section id="salarini-foco">
-        <div class="section-inner">
-          <div class="focus-panel">
-            <div class="focus-header">
-              <p class="kicker">Linha Salarini em foco</p>
-              <h2>Como a linha Salarini chega até você</h2>
-              <p>Esta é a leitura rápida de quem é pai de quem. A linha passa por Ricardo + Justina, chega em Carlos + Elvira, desce para Gervásio, depois Benício, e termina em você.</p>
-            </div>
-
-            <div class="focus-header">
-              <p class="kicker">Novidade de 2026-07-03</p>
-              <h2>De onde vem o sobrenome Salarini</h2>
-              <p>Até agora, a "linha do avô" só tinha sido pesquisada pelo lado da Elvira Pompermayer. Os pais e avós do próprio Carlos Salarini nunca tinham sido investigados - ou seja, faltava a origem do sobrenome que você carrega. Isso mudou: o pai de Carlos, Giovanni Salarini, veio de Felonica, na província de Mantova, região da Lombardia, na Itália.</p>
-            </div>
-
-            <div class="tree-wrap">
-              <svg viewBox="0 0 380 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama da ascendencia de Carlos Salarini, de Felonica na Italia ate Gervasio Salarini">
-                <line x1="190" y1="76" x2="190" y2="100" class="tree-link strong"/>
-                <line x1="190" y1="166" x2="115" y2="190" class="tree-link strong"/>
-                <line x1="190" y1="166" x2="265" y2="190" class="tree-link strong"/>
-                <line x1="115" y1="250" x2="190" y2="290" class="tree-link uncertain"/>
-                <line x1="265" y1="250" x2="190" y2="290" class="tree-link uncertain"/>
-                <line x1="190" y1="350" x2="190" y2="374" class="tree-link confirmed"/>
-
-                <g class="tree-node strong">
-                  <rect x="40" y="10" width="300" height="66" rx="8"/>
-                  <text x="190" y="30" text-anchor="middle" class="tree-name">Angelo Salarini</text>
-                  <text x="190" y="45" text-anchor="middle" class="tree-name">+ Margherita Moreschi</text>
-                  <text x="190" y="61" text-anchor="middle" class="tree-caption">Felonica, Mantova, Italia</text>
-                  <text x="190" y="72" text-anchor="middle" class="tree-tag">Pista forte</text>
-                </g>
-
-                <g class="tree-node strong">
-                  <rect x="40" y="100" width="300" height="66" rx="8"/>
-                  <text x="190" y="122" text-anchor="middle" class="tree-name">Giovanni Salarini</text>
-                  <text x="190" y="138" text-anchor="middle" class="tree-caption">n. ~1850, Felonica &#8594; Alfredo Chaves-ES</text>
-                  <text x="190" y="155" text-anchor="middle" class="tree-tag">Pista forte</text>
-                </g>
-
-                <g class="tree-node pending">
-                  <rect x="40" y="190" width="150" height="60" rx="8"/>
-                  <text x="115" y="212" text-anchor="middle" class="tree-name">Elena Bassi</text>
-                  <text x="115" y="227" text-anchor="middle" class="tree-caption">1a esposa, 1874</text>
-                  <text x="115" y="242" text-anchor="middle" class="tree-tag">Provavel falecida ate 1880</text>
-                </g>
-
-                <g class="tree-node strong">
-                  <rect x="190" y="190" width="150" height="60" rx="8"/>
-                  <text x="265" y="212" text-anchor="middle" class="tree-name">Teresa Negri</text>
-                  <text x="265" y="227" text-anchor="middle" class="tree-caption">2a esposa, 1880</text>
-                  <text x="265" y="242" text-anchor="middle" class="tree-tag">Pista forte</text>
-                </g>
-
-                <g class="tree-node confirmed">
-                  <rect x="40" y="290" width="300" height="60" rx="8"/>
-                  <text x="190" y="310" text-anchor="middle" class="tree-name">Carlos Salarini + Elvira Pompermayer</text>
-                  <text x="190" y="325" text-anchor="middle" class="tree-caption">mae de Carlos ainda a confirmar</text>
-                  <text x="190" y="341" text-anchor="middle" class="tree-tag">Casamento confirmado (1896)</text>
-                </g>
-
-                <g class="tree-node confirmed">
-                  <rect x="90" y="374" width="200" height="56" rx="8"/>
-                  <text x="190" y="396" text-anchor="middle" class="tree-name">Gervásio Salarini</text>
-                  <text x="190" y="411" text-anchor="middle" class="tree-caption">avô paterno</text>
-                  <text x="190" y="423" text-anchor="middle" class="tree-tag">Confirmada</text>
-                </g>
-
-                <g class="tree-legend">
-                  <rect x="40" y="440" width="12" height="12" rx="3" class="legend-swatch pending"/>
-                  <text x="58" y="450" class="tree-caption">Divergencia a resolver (SA-002)</text>
-                </g>
-              </svg>
-            </div>
-            <p class="tree-note">Giovanni Salarini casou duas vezes em Felonica antes de emigrar. A árvore atribui Carlos e os irmãos mais novos (nascidos já em Alfredo Chaves-ES) à segunda esposa, Teresa Negri, mas o ano de nascimento hoje registrado para Carlos (~1875) é anterior a esse segundo casamento (1880) e não tem fonte - por isso a filiação exata de Carlos ainda está em aberto.</p>
-
-            <div class="salarini-storyline" aria-label="Linha direta Salarini Pompermayer ate Marcus">
-              <article class="relation-card" data-step="1">
-                <h3>Ricardo Pompermayer + Justina Bressanelli</h3>
-                <p>São seus trisavós paternos neste ramo. A evidência mais forte até agora vem pelo nascimento de José Salarini: o índice civil lista Elvira como filha de Ricardo + Justina.</p>
-                <div class="relation-meta">
-                  <div><strong>Filha direta</strong><span>Elvira Pompermayer</span></div>
-                  <div><strong>Status</strong><span>Confirmado por índice civil; imagem do livro ainda restrita</span></div>
-                </div>
-              </article>
-
-              <article class="relation-card" data-step="2">
-                <h3>Carlos Salarini + Elvira Pompermayer</h3>
-                <p>São seus bisavós paternos pelo ramo Salarini/Pompermayer. Já aparecem sustentados por Gervásio, José, João, Aguido e Edylio/Idílio; a página 118 abriu o checklist dos demais filhos.</p>
-                <div class="relation-meta">
-                  <div><strong>Filho da sua linha direta</strong><span>Gervásio Salarini, seu avô paterno</span></div>
-                  <div><strong>Outros filhos em busca</strong><span>Teresa, Valdemiro, Amélia, Luiz, Ana, Áurea e Dionísio</span></div>
-                </div>
-              </article>
-
-              <article class="relation-card" data-step="3">
-                <h3>Gervásio Salarini + Olendina Thereza Vizzoni</h3>
-                <p>São seus avós paternos. O fichário civil confirma Gervásio como filho de Carlos + Elvira e confirma Benício como filho de Gervásio + Olendina.</p>
-                <div class="relation-meta">
-                  <div><strong>Filho direto</strong><span>Benício Vezzoni Salarini</span></div>
-                  <div><strong>Status</strong><span>Confirmado por certidões civis do fichário</span></div>
-                </div>
-              </article>
-
-              <article class="relation-card" data-step="4">
-                <h3>Benício Vezzoni Salarini</h3>
-                <p>É seu pai e o ponto onde as duas linhas paternas se encontram: Salarini/Pompermayer pelo lado de Gervásio e Vezzoni/Bissa pelo lado de Olendina.</p>
-                <div class="relation-meta">
-                  <div><strong>Pai</strong><span>Marcus Vinicius Santos Salarini</span></div>
-                  <div><strong>Status</strong><span>Confirmado por certidão de nascimento no fichário</span></div>
-                </div>
-              </article>
-
-              <article class="relation-card current" data-step="5">
-                <h3>Marcus Vinicius Santos Salarini</h3>
-                <p>Você está aqui. Para ler a página: Carlos + Elvira são seus bisavós; os outros filhos deles são seus tios-avós paternos; Ricardo + Justina são seus trisavós.</p>
-              </article>
-            </div>
-
-            <div class="salarini-history" aria-label="Linha historica Salarini Pompermayer">
-              <div class="history-row"><time>1874</time><span>Nascimento indicado de Ricardo Pompermayer em Marter/Roncegno, hoje Trentino.</span></div>
-              <div class="history-row"><time>c. 1896</time><span>Casamento de Carlos Salarini + Elvira Pompermayer ainda tratado como pista secundária; registro primário não localizado.</span></div>
-              <div class="history-row"><time>1929</time><span>João Salarini nasce em Vila de Alto Pongal; o óbito de 2007 cita número, folha e livro do nascimento.</span></div>
-              <div class="history-row"><time>1932</time><span>Aguido Salarini nasce em Iriritiba; indice civil localizado via arvore colaborativa confirma Carlos + Elvira como pais.</span></div>
-              <div class="history-row"><time>1935</time><span>José Salarini tem índice civil em Iriritiba que confirma Carlos + Elvira e liga Elvira a Ricardo + Justina.</span></div>
-              <div class="history-row"><time>2026</time><span>Loop atual: separar filhos confirmados, pistas secundárias e próximos pedidos de certidão.</span></div>
-            </div>
-
-            <div class="salarini-proof-grid" aria-label="Evidencias da linha Salarini">
-              <div class="salarini-proof">
-                <strong>Gervásio</strong>
-                <span>Avô paterno. Confirmado por certidões civis do fichário: filho de Carlos Salarini e Elvira Pompermayer.</span>
-              </div>
-              <div class="salarini-proof">
-                <strong>José</strong>
-                <span>Tio-avô paterno. Índice civil de nascimento de 1935 confirma os pais Carlos + Elvira e ainda liga Elvira a Ricardo + Justina.</span>
-              </div>
-              <div class="salarini-proof">
-                <strong>João</strong>
-                <span>Tio-avô paterno. Certidão de óbito completa confirma nascimento em Alto Pongal e cita o livro/folha/termo do nascimento.</span>
-              </div>
-              <div class="salarini-proof">
-                <strong>Aguido</strong>
-                <span>Tio-avô paterno. Índice civil de nascimento (1932, Iriritiba) confirma Carlos + Elvira como pais; localizado pelo perfil dele na árvore colaborativa, não pela busca estruturada.</span>
-              </div>
-              <div class="salarini-proof strong">
-                <strong>Idílio / Edylio</strong>
-                <span>Tio-avô paterno. Óbito de 1939 localizado no FamilySearch reforça Carlos + Elvira; falta conferir a imagem original.</span>
-              </div>
-              <div class="salarini-proof gap">
-                <strong>Gargalo atual</strong>
-                <span>Imagens dos registros de José, João e Aguido continuam restritas mesmo logado. Melhor caminho agora: FamilySearch Center ou cartório de Alto Pongal/Anchieta.</span>
-              </div>
-            </div>
-
-            <div class="children-board">
-              <div>
-                <h3>Filhos de Carlos + Elvira: quem são em relação a você</h3>
-                <p>Gervásio é seu avô paterno. Os demais filhos do casal são seus tios-avós paternos e ajudam a provar o casal por registros independentes.</p>
-              </div>
-              <div class="children-grid" aria-label="Checklist dos filhos de Carlos Salarini e Elvira Pompermayer">
-                <div class="child-chip confirmed"><div><span>Gervásio</span><small>seu avô paterno · confirmado</small></div></div>
-                <div class="child-chip confirmed"><div><span>José</span><small>tio-avô · índice civil</small></div></div>
-                <div class="child-chip confirmed"><div><span>João</span><small>tio-avô · óbito completo</small></div></div>
-                <div class="child-chip strong"><div><span>Idílio / Edylio</span><small>tio-avô · óbito parcial</small></div></div>
-                <div class="child-chip confirmed"><div><span>Aguido</span><small>tio-avô · índice civil</small></div></div>
-                <div class="child-chip pending"><div><span>Teresa</span><small>tia-avó · buscar com Gentil Ceccon</small></div></div>
-                <div class="child-chip pending"><div><span>Valdemiro</span><small>tio-avô · buscar com Venturino</small></div></div>
-                <div class="child-chip pending"><div><span>Amélia</span><small>tia-avó · buscar com Vizzoni</small></div></div>
-                <div class="child-chip pending"><div><span>Luiz</span><small>tio-avô · buscar com Juriato</small></div></div>
-                <div class="child-chip pending"><div><span>Ana</span><small>tia-avó · buscar com Vizzoni</small></div></div>
-                <div class="child-chip pending"><div><span>Áurea</span><small>tia-avó · buscar registro</small></div></div>
-                <div class="child-chip pending"><div><span>Dionísio</span><small>tio-avô · buscar registro</small></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="linha">
-        <div class="section-inner">
-          <div class="section-heading">
-            <h2>Linha do avo paterno: Salarini/Pompermayer</h2>
-            <p>Do avo paterno Gervasio Salarini ate os Pompermayer/Hueller em Marter/Roncegno, na Italia.</p>
-          </div>
-
-          <div class="lineage" aria-label="Linha ancestral">
-            <article class="person pending">
-              <div class="tag-row">
-                <span class="tag pending">Indice forte</span>
-              </div>
-              <h3>Cristano Pompermayer + Anna Hueller</h3>
-              <p>O Nati in Trentino sustenta o grupo familiar com cinco nascimentos Pompermajer entre 1866 e 1874 em Roncegno/Marter. Ainda precisamos localizar o casamento e conferir a variacao Anna/Giovanna nos assentos originais.</p>
-            </article>
-
-            <article class="person pending">
-              <div class="tag-row">
-                <span class="tag strong">Pista forte</span>
-              </div>
-              <h3>Ricardo Pompermayer + Justina Bressanelli</h3>
-              <p>Ricardo aparece como Pompermajer Riccardo, nascido em 24/05/1874, paroquia Marter - S. Margherita, Roncegno Terme.</p>
-            </article>
-
-            <article class="person">
-              <div class="tag-row">
-                <span class="tag confirmed">Confirmada</span>
-              </div>
-              <h3>Elvira Pompermayer + Carlos Salarini</h3>
-              <p>Registro civil de nascimento do filho Jose Salarini (1935) lista Ricardo Pompermayer e Justina Bressanelli como pais de Elvira, resolvendo a lacuna. Uma pagina familiar fotografada agora amplia o roteiro dos filhos do casal, incluindo Joao, Aguido, Teresa, Valdemiro, Amelia, Aurea e Dionisio.</p>
-            </article>
-
-            <article class="person">
-              <div class="tag-row">
-                <span class="tag confirmed">Confirmada</span>
-              </div>
-              <h3>Gervasio Salarini + Olendina Thereza Vizzoni</h3>
-              <p>A ligacao com Carlos Salarini e Elvira Pompermayer e sustentada por certidao de casamento de Gervasio e certidao de nascimento de Benicio.</p>
-            </article>
-
-            <article class="person">
-              <div class="tag-row">
-                <span class="tag confirmed">Confirmada</span>
-              </div>
-              <h3>Benicio Vezzoni Salarini</h3>
-              <p>Certidao de nascimento confirma Benicio como filho de Gervasio Salarini e Olendina, fechando a parte brasileira mais segura da linha.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="vezzoni">
-        <div class="section-inner">
-          <div class="section-heading">
-            <h2>Linha da avo paterna: Vezzoni/Bissa</h2>
-            <p>Esta linha ficou fora do loop de pesquisa ate 2026-07-03. Comeca em Gussola, provincia de Cremona, na Lombardia (Italia) - uma regiao diferente do Trentino da linha Pompermayer - e chega a avo paterna, Olendina Thereza Vezzoni.</p>
-          </div>
-
-          <div class="lineage" aria-label="Linha ancestral Vezzoni/Bissa">
-            <article class="person">
-              <div class="tag-row">
-                <span class="tag confirmed">Confirmada</span>
-              </div>
-              <h3>Giacomo Vezzoni + [Rosa Maria] Barili</h3>
-              <p>Pais de Vincenzo Vezzoni, agora confirmados pelo proprio registro de nascimento dele em Gussola (Portale Antenati, ato n. 62, 1869): pai "Vezzoni Giacomo, filho do falecido Ferdinando, 28 anos, contadino"; mae "Barili, filha do vivente Stefano". O primeiro nome da mae ("Rosa Maria") vem da fonte secundaria e ainda nao aparece em nenhum documento primario.</p>
-            </article>
-
-            <article class="person">
-              <div class="tag-row">
-                <span class="tag confirmed">Confirmada</span>
-              </div>
-              <h3>Vincenzo Vezzoni + Luigia Orsola Cetto</h3>
-              <p>Nascido em 29/05/1869 em Gussola, confirmado pelo proprio assento de nascimento (Portale Antenati). Registro de Entrada de Imigrante do Projeto Imigrantes/APEES confirma que embarcou sozinho em Genova em 10/11/1890 no navio "Città di Roma", desembarcando em Vitoria-ES em 1890.</p>
-            </article>
-
-            <article class="person">
-              <div class="tag-row">
-                <span class="tag confirmed">Confirmada</span>
-              </div>
-              <h3>Stefano/Estevao Vezzoni + Barbara Bissa</h3>
-              <p>Certidao de casamento inteiro teor confirma o casamento em 20/07/1918, em Iriritiba/Anchieta-ES, com retificacao judicial de 2018 que corrige os nomes para Stefano Vezzoni e Vincenzo Vezzoni + Luigia Orsola Cetto.</p>
-            </article>
-
-            <article class="person">
-              <div class="tag-row">
-                <span class="tag confirmed">Confirmada</span>
-              </div>
-              <h3>Olendina Thereza Vezzoni</h3>
-              <p>Certidao de nascimento confirma Olendina como filha de Stefano e Barbara, e avo paterna do autor da pesquisa. Segue na linha principal ate Gervasio Salarini e Benicio.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="evidencias">
-        <div class="section-inner">
-          <div class="section-heading">
-            <h2>Evidencias salvas</h2>
-            <p>Imagens e arquivos auxiliares devem funcionar como prova visual rapida. O ideal, quando existir, e salvar a imagem/documento original da fonte, e usar print apenas como apoio.</p>
-          </div>
-
-          <div class="evidence-grid">
-            <article class="evidence-card featured">
-              <figure>
-                <img src="IT-001/2026-07-03_nati-trentino_tabela-riccardo-pompermajer.png" alt="Tabela do Nati in Trentino com Pompermajer Riccardo, nascido em 24/05/1874, filho de Cristano e Ueller Anna">
-              </figure>
-              <div class="evidence-body">
-                <p class="eyebrow">IT-001 · Nati in Trentino · 2026-07-03</p>
-                <h3>Pompermajer Riccardo localizado no indice de nascimentos</h3>
-                <p>O resultado mostra nome, data, filiacao, paroquia e comuna: Pompermajer Riccardo, 24/05/1874, filho de Cristano e Ueller Anna, Marter - S. Margherita, Roncegno Terme.</p>
-                <div class="links">
-                  <a class="button-link" href="IT-001/2026-07-03_nati-trentino_scheda-55906.md">Ver transcricao</a>
-                  <a class="button-link secondary" href="IT-001/2026-07-03_nati-trentino_scheda-55906.csv">Abrir CSV</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="evidence-card">
-              <figure>
-                <img src="IT-001/2026-07-03_nati-trentino_resultado-riccardo-pompermajer.png" alt="Ficha detalhada do Nati in Trentino para Pompermajer Riccardo">
-              </figure>
-              <div class="evidence-body">
-                <p class="eyebrow">Scheda 55906</p>
-                <h3>Ficha detalhada do indice</h3>
-                <p>O modal reforca a mesma leitura da tabela. Proximo passo: conseguir a imagem do livro paroquial por FamilySearch com login ou por consulta/solicitacao ao Archivio Diocesano Tridentino.</p>
-              </div>
-            </article>
-
-            <article class="evidence-card">
-              <div class="evidence-body">
-                <p class="eyebrow">Fichario3.pdf</p>
-                <h3>Certidoes brasileiras sustentam a linha Salarini</h3>
-                <p>As certidoes descritas no arquivo principal sustentam Carlos + Elvira -> Gervasio -> Benicio. Esta parte e tratada como confirmada na pesquisa atual.</p>
-              </div>
-            </article>
-
-            <article class="evidence-card">
-              <div class="evidence-body">
-                <p class="eyebrow">IT-002 · Nati in Trentino</p>
-                <h3>Cinco filhos localizados para o grupo Cristano + Anna/Hueller</h3>
-                <p>Foram estruturadas as schede de Carlo Luigi, Giovanni Cristano, Maria Celeste, Giulia Metilde e Riccardo entre 1866 e 1874. A variacao Anna/Giovanna ainda precisa ser conferida nos assentos originais.</p>
-                <div class="links">
-                  <a class="button-link secondary" href="IT-002/2026-07-03_nati-trentino_filhos-cristano-anna.md">Ver transcricao</a>
-                  <a class="button-link secondary" href="IT-002/2026-07-03_nati-trentino_filhos-cristano-anna.csv">Abrir CSV</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="evidence-card">
-              <div class="evidence-body">
-                <p class="eyebrow">IT-003 · Scheda 324706</p>
-                <h3>Cristano Francesco localizado em Fierozzo, 1823</h3>
-                <p>O indice lista Pompermajer Cristano Francesco, nascido em 04/04/1823, filho de Cristano e Corn Cattarina, em Fierozzo S. Francesco.</p>
-                <div class="links">
-                  <a class="button-link secondary" href="IT-003/2026-07-03_nati-trentino_cristano-francesco-1823.md">Ver transcricao</a>
-                  <a class="button-link secondary" href="IT-003/2026-07-03_nati-trentino_cristano-francesco-1823.csv">Abrir CSV</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="evidence-card">
-              <div class="evidence-body">
-                <p class="eyebrow">IT-004 · Metodo de busca</p>
-                <h3>Pompermajer e a grafia principal na Italia</h3>
-                <p>No Nati in Trentino, Pompermajer aparece 685 vezes, Pompermaier 111 e Pompermayer apenas 5. Para buscas italianas, o loop passa a priorizar Pompermajer.</p>
-                <div class="links">
-                  <a class="button-link secondary" href="IT-004/2026-07-03_nati-trentino_mapa-grafias-pompermayer.md">Ver mapa</a>
-                  <a class="button-link secondary" href="IT-004/2026-07-03_nati-trentino_mapa-grafias-pompermayer.csv">Abrir CSV</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="evidence-card featured">
-              <figure>
-                <img src="VZ-004/2026-07-21_portale-antenati_gussola-1869-nascimento-vincenzo-vezzoni.jpg" alt="Pagina do registro de nascimentos de Gussola, 1869, Archivio di Stato di Cremona, mostrando o ato n.62 de Vincenzo Vezzoni">
-              </figure>
-              <div class="evidence-body">
-                <p class="eyebrow">VZ-004 · Portale Antenati · Archivio di Stato di Cremona · 2026-07-21</p>
-                <h3>Certidao de nascimento de Vincenzo Vezzoni, Gussola, 1869</h3>
-                <p>Ato n. 62 do registro de nascimentos de Gussola: Vincenzo Vezzoni nasceu em 29/05/1869, as 16h, filho de Giacomo Vezzoni (filho do falecido Ferdinando, 28 anos, contadino) e de sua esposa, sobrenome Barili (filha do vivente Stefano). Localizado apos varredura manual pagina a pagina, ja que nem o indice por nome do Antenati nem o FamilySearch Full-Text cobrem os registros civis de Gussola/Cremona.</p>
-                <div class="links">
-                  <a class="button-link" href="VZ-004/2026-07-21_portale-antenati_gussola-1869-nascimento-vincenzo-vezzoni.md">Ver transcricao</a>
-                  <a class="button-link secondary" href="https://antenati.cultura.gov.it/ark:/12657/an_ua2463635/04ryB9R">Ver no Portale Antenati</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="evidence-card featured">
-              <figure>
-                <img src="VZ-002/2026-07-03_apees-projeto-imigrantes_vincenzo-vezzoni-registro-entrada.jpg" alt="Registro de Entrada de Imigrante do Projeto Imigrantes APEES para Vincenzo Vezzoni, natural de Gussola, Cremona, Lombardia">
-              </figure>
-              <div class="evidence-body">
-                <p class="eyebrow">VZ-002 · Projeto Imigrantes APEES · 2026-07-03</p>
-                <h3>Registro oficial de imigracao de Vincenzo Vezzoni</h3>
-                <p>Documento arquivistico primario: Vincenzo, filho de Giacomo, natural de Gussola/Cremona/Lombardia, embarcou sozinho em Genova em 10/11/1890 no navio "Città di Roma" e desembarcou em Vitoria-ES em 1890.</p>
-                <div class="links">
-                  <a class="button-link" href="VZ-002/2026-07-03_apees-projeto-imigrantes_vincenzo-vezzoni.md">Ver resumo</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="evidence-card">
-              <figure>
-                <img src="VZ-001/2026-07-03_cartorio-alto-pongal_certidao-casamento-estevao-vezzoni-barbara-bissa.png" alt="Certidao de casamento de Estevao Vezzoni e Barbara Bissa, Cartorio de Vila de Alto Pongal, 1918">
-              </figure>
-              <div class="evidence-body">
-                <p class="eyebrow">VZ-001 · Cartorio de Vila de Alto Pongal · 2026-07-03</p>
-                <h3>Casamento de Stefano Vezzoni e Barbara Bissa</h3>
-                <p>Certidao inteiro teor confirma o casamento em 20/07/1918, em Iriritiba/Anchieta-ES, com filiacao de ambos e averbacao de retificacao judicial de 2018 para os nomes italianos corretos.</p>
-                <div class="links">
-                  <a class="button-link secondary" href="VZ-001/2026-07-03_certidao-casamento_estevao-vezzoni-barbara-bissa.md">Ver resumo</a>
-                  <a class="button-link secondary" href="VZ-001/2026-07-03_cartorio-alto-pongal_retificacao-casamento-vezzoni-nomes-italianos.png">Ver retificacao</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="evidence-card featured">
-              <figure>
-                <img src="BR-003/2026-07-03_familysearch_obito-joao-salarini-2007-filho-carlos-elvira.jpg" alt="Certidao de obito de Joao Salarini, filho de Carlos Salarini e Elvira Pompermayer, Sinop-MT 2007">
-              </figure>
-              <div class="evidence-body">
-                <p class="eyebrow">BR-003 · FamilySearch · 2026-07-03</p>
-                <h3>Obito de Joao Salarini confirma Carlos + Elvira</h3>
-                <p>Certidao completa e legivel (sem restricao) mostra Joao Salarini, religioso, nascido em 1929 em Vila de Alto Pongal-ES e falecido em 2007 em Sinop-MT, filho de Carlos Salarini e Elvira Pompermayer. Cita a certidao de nascimento original (numero 168, folha 111, livro 07) do cartorio de Alto Pongal.</p>
-                <div class="links">
-                  <a class="button-link" href="BR-003/2026-07-03_familysearch_obito-joao-salarini.md">Ver resumo</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="evidence-card featured">
-              <figure>
-                <img src="BR-007/2026-07-03_livro-familia-pompermayer-p118_elvira-carlos-salarini.jpg" alt="Pagina 118 do livro familiar Pompermayer mostrando Ricardo e Justina, Elvira e Carlos Salarini, e descendentes">
-              </figure>
-              <div class="evidence-body">
-                <p class="eyebrow">BR-007 · Livro/fotos da familia · 2026-07-03</p>
-                <h3>Pagina 118 abre o checklist dos filhos Salarini</h3>
-                <p>A foto local mostra Ricardo (1874) + Justina Bressanelli levando a Elvira + Carlos Salarini e lista filhos/ramais como Luiz, Idilio, Gervasio, Ana, Valdemiro, Amelia, Joao, Aguido, Jose, Teresa, Aurea e Dionisio. E fonte familiar secundaria, usada como roteiro para buscar certidoes primarias.</p>
-                <div class="links">
-                  <a class="button-link" href="BR-007/2026-07-03_livro-familia-pompermayer-p118_elvira-carlos-salarini.md">Ver resumo</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="evidence-card">
-              <div class="evidence-body">
-                <p class="eyebrow">BR-008 · FamilySearch · resultado negativo util</p>
-                <h3>Busca por filhos de Carlos + Elvira mostrou o gargalo</h3>
-                <p>No FamilySearch, a consulta por pai Carlos Salarini + mae Elvira Pompermayer retornou apenas Joao Salarini. Buscas por Aguido/Jose com local e data tambem falharam, inclusive para Jose, cujo ARK ja conhecemos. O proximo caminho e navegar o livro civil ou pedir certidao ao cartorio.</p>
-                <div class="links">
-                  <a class="button-link secondary" href="BR-008/2026-07-03_familysearch_busca-filhos-carlos-elvira.md">Ver busca</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="evidence-card">
-              <div class="evidence-body">
-                <p class="eyebrow">BR-009 · busca web + FamilySearch · 2026-07-03</p>
-                <h3>Aguido ganhou uma data-alvo, mas ainda sem prova primária</h3>
-                <p>Fonte pública secundária repete Aguido Salarini nascido em 21/12/1932 em Iriritiba/Anchieta. Teste logado no FamilySearch com essa data e local retornou 0 resultados; busca ampla por Aguido Salarini trouxe 1.198 resultados sem Aguido visível no topo. A data agora guia o livro civil, mas não entra como fato confirmado.</p>
-                <div class="links">
-                  <a class="button-link secondary" href="BR-009/2026-07-03_web-familysearch_aguido-salarini-data-alvo.md">Ver busca</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="evidence-card featured">
-              <div class="evidence-body">
-                <p class="eyebrow">BR-010 · FamilySearch (árvore colaborativa) · 2026-07-03</p>
-                <h3>Aguido Salarini confirmado: o caminho era o perfil, não a busca</h3>
-                <p>A busca estruturada falhava mesmo para registros que existem. A solução foi abrir o perfil de Aguido dentro da árvore colaborativa do FamilySearch (via lista de filhos de Elvira) e checar a aba "Fontes": havia um índice de nascimento já anexado, confirmando Carlos Salarini e Elvira Pompermayer como pais, no mesmo livro civil de Iriritiba onde está José.</p>
-                <div class="links">
-                  <a class="button-link" href="BR-010/2026-07-03_familysearch_aguido-salarini-confirmado.md">Ver resumo</a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="confianca">
-        <div class="section-inner">
-          <div class="section-heading">
-            <h2>Grau de confianca</h2>
-            <p>A pagina separa o que ja esta confirmado, o que e pista forte e o que ainda precisa ser provado. Isso evita misturar memoria familiar com documento primario.</p>
-          </div>
-
-          <div class="confidence-grid">
-            <article class="confidence-card">
-              <p class="eyebrow">Confirmado</p>
-              <h3>Benicio -> Gervasio + Olendina</h3>
-              <p>Base: certidao de nascimento de Benicio e cruzamentos civis ja descritos na memoria.</p>
-            </article>
-
-            <article class="confidence-card">
-              <p class="eyebrow">Confirmado</p>
-              <h3>Gervasio -> Carlos + Elvira</h3>
-              <p>Base: certidao de casamento de Gervasio e certidao de nascimento de Benicio.</p>
-            </article>
-
-            <article class="confidence-card strong">
-              <p class="eyebrow">Pista forte</p>
-              <h3>Ricardo -> Cristano + Anna</h3>
-              <p>Base: indice Nati in Trentino, scheda 55906, reforcada pelo conjunto de filhos Pompermajer em IT-002. Falta copiar o assento paroquial original.</p>
-            </article>
-
-            <article class="confidence-card strong">
-              <p class="eyebrow">Pista forte</p>
-              <h3>Cristano Francesco -> Cristano + Cattarina Corn</h3>
-              <p>Base: indice Nati in Trentino, scheda 324706, em Fierozzo S. Francesco, 04/04/1823. Falta a imagem do assento.</p>
-            </article>
-
-            <article class="confidence-card">
-              <p class="eyebrow">Confirmado</p>
-              <h3>Ricardo + Justina -> Elvira</h3>
-              <p>Base: indice do FamilySearch para o registro civil de nascimento de Jose Salarini (1935, Iriritiba-ES), que lista Ricardo Pompermayer e Justina Bressanelli como pais de Elvira. Imagem do documento ainda restrita.</p>
-            </article>
-
-            <article class="confidence-card pending">
-              <p class="eyebrow">Pendente</p>
-              <h3>Casamento Ricardo + Justina</h3>
-              <p>Deve ser buscado em registros civis e paroquiais do Espirito Santo, especialmente Alfredo Chaves, Rio Novo, Benevente/Anchieta e Matilde.</p>
-            </article>
-
-            <article class="confidence-card gap">
-              <p class="eyebrow">Regra do loop</p>
-              <h3>Sem prova primaria, marcar como hipotese</h3>
-              <p>O arquivo deve registrar a fonte, a confianca, o proximo passo e os lugares ja pesquisados para evitar buscas repetidas.</p>
-            </article>
-
-            <article class="confidence-card">
-              <p class="eyebrow">Confirmado</p>
-              <h3>Stefano + Barbara, casamento</h3>
-              <p>Base: certidao de casamento inteiro teor de 20/07/1918, com averbacao de retificacao judicial de 2018.</p>
-            </article>
-
-            <article class="confidence-card">
-              <p class="eyebrow">Confirmado</p>
-              <h3>Vincenzo Vezzoni: nascimento, origem e imigracao</h3>
-              <p>Base: certidao de nascimento em Gussola (29/05/1869, Portale Antenati, ato n.62) e Registro de Entrada de Imigrante do Projeto Imigrantes/APEES. Natural de Gussola/Cremona/Lombardia, imigrou sozinho em 1890.</p>
-            </article>
-
-            <article class="confidence-card">
-              <p class="eyebrow">Confirmado</p>
-              <h3>Vincenzo -> Giacomo Vezzoni + [Rosa Maria] Barili</h3>
-              <p>Base: certidao primaria de nascimento de Vincenzo (Gussola, 1869), que nomeia o pai "Giacomo Vezzoni" e a mae apenas como "Barili, filha do vivente Stefano". O primeiro nome completo da mae ("Rosa Maria") ainda vem so da fonte secundaria de genealogia.</p>
-            </article>
-          </div>
-
-          <div class="callout">
-            <strong>Leitura curta da pesquisa ate aqui</strong>
-            <p>As duas linhas paternas avancaram bastante desde 2026-07-03. Na linha Vezzoni/Bissa (avo paterna), casamento, imigracao e agora tambem o nascimento de Vincenzo Vezzoni em Gussola (Italia, 1869) foram confirmados por certidao e registro oficial - a primeira fonte primaria italiana da pesquisa. Na linha Pompermayer (avo paterno), um registro civil brasileiro confirmou que Elvira Pompermayer era filha de Ricardo Pompermayer e Justina Bressanelli - o antigo gargalo genealogico da pesquisa. O proximo gargalo agora e conseguir a imagem completa dos documentos brasileiros restritos (nascimento de Jose Salarini) e o casamento de Vincenzo Vezzoni com Luigia Orsola Cetto.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="proximas">
-        <div class="section-inner">
-          <div class="section-heading">
-            <h2>Proximas buscas</h2>
-            <p>O loop de pesquisa deve priorizar documentos que aumentem o grau de confianca, sempre registrando fonte, link, data da consulta e evidencia visual ou arquivo original.</p>
-          </div>
-
-          <div class="next-grid">
-            <article class="next-card">
-              <p class="eyebrow">Prioridade 1</p>
-              <h3>Assento original de Ricardo</h3>
-              <p>Buscar a imagem/copia paroquial de Marter - S. Margherita para Pompermajer Riccardo, nascido em 24/05/1874. Caminhos atuais: FamilySearch com login ou Archivio Diocesano Tridentino via sala de estudo/domanda de acesso.</p>
-            </article>
-
-            <article class="next-card">
-              <p class="eyebrow">Prioridade 2</p>
-              <h3>Casamento Cristano + Anna</h3>
-              <p>Buscar o casamento paroquial em Roncegno, provavelmente 1864 ou 1866. O conjunto dos filhos ja sustenta o casal, mas o casamento ainda e a prova direta.</p>
-            </article>
-
-            <article class="next-card">
-              <p class="eyebrow">Prioridade 3</p>
-              <h3>Assento original de Cristano Francesco</h3>
-              <p>Solicitar ou consultar a scheda 324706 em Fierozzo S. Francesco para transformar a pista de 1823 em fonte primaria.</p>
-            </article>
-
-            <article class="next-card">
-              <p class="eyebrow">Concluida em 2026-07-03</p>
-              <h3>Filiacao de Elvira confirmada</h3>
-              <p>Indice do FamilySearch para o nascimento de Jose Salarini (1935) confirma Ricardo Pompermayer e Justina Bressanelli como pais de Elvira. Falta apenas a imagem do documento.</p>
-            </article>
-
-            <article class="next-card">
-              <p class="eyebrow">Prioridade 5</p>
-              <h3>Filhos Salarini listados na pagina 118</h3>
-              <p>Repetir o metodo do perfil colaborativo (que confirmou Aguido) para Teresa + Gentil Ceccon, Valdemiro + Conceicao Venturino, Amelia + Venancio Vizzoni, Luiz + Antonieta Juriato, Aurea e Dionisio; depois buscar as certidoes de casamento de cada um.</p>
-            </article>
-
-            <article class="next-card">
-              <p class="eyebrow">Prioridade 6</p>
-              <h3>Casamento Elvira + Carlos</h3>
-              <p>Esse registro (buscado sem sucesso em 2026-07-03) pode trazer data e local exatos da uniao entre as linhas Pompermayer e Salarini.</p>
-            </article>
-
-            <article class="next-card">
-              <p class="eyebrow">Prioridade 7</p>
-              <h3>Imigracao de Cristano + Anna</h3>
-              <p>Verificar chegada ao Espirito Santo em 1875 e possiveis registros da colonia Rio Novo/Segundo Territorio.</p>
-            </article>
-
-            <article class="next-card">
-              <p class="eyebrow">Metodo</p>
-              <h3>Salvar melhor evidencia possivel</h3>
-              <p>Quando houver imagem original do livro, salvar a imagem. Quando nao houver, salvar print, transcricao estruturada, link e contexto.</p>
-            </article>
-
-            <article class="next-card">
-              <p class="eyebrow">Controle</p>
-              <h3>Ignorar fontes ja pesquisadas</h3>
-              <p>Registrar bases, termos usados e resultados negativos em pesquisa/fontes_pesquisadas.md para o loop nao repetir terreno.</p>
-            </article>
-
-            <article class="next-card">
-              <p class="eyebrow">Vezzoni · Prioridade 1</p>
-              <h3>Origem italiana de Estefano Bissa e Maria Libardi</h3>
-              <p>Pais de Barbara Bissa, ja confirmados por certidao brasileira. Falta localizar o nascimento/regiao deles na Italia.</p>
-            </article>
-
-            <article class="next-card">
-              <p class="eyebrow">Concluida em 2026-07-21</p>
-              <h3>Registro primario de Vincenzo Vezzoni em Gussola</h3>
-              <p>Localizado o ato de nascimento de Vincenzo (29/05/1869, Gussola, Archivio di Stato di Cremona), com pai Giacomo Vezzoni e mae de sobrenome Barili. Falta so o casamento de Vincenzo com Luigia Orsola Cetto (ver pendencia ao lado).</p>
-            </article>
-
-            <article class="next-card">
-              <p class="eyebrow">Vezzoni · Prioridade 2</p>
-              <h3>Casamento de Vincenzo Vezzoni e Luigia Orsola Cetto</h3>
-              <p>Com o nascimento de Vincenzo ja confirmado em Gussola, o proximo passo natural e buscar o casamento dele com Luigia Orsola Cetto no mesmo arquivo (Archivio di Stato di Cremona) ou, se o casamento foi no Brasil, nos registros civis do Espirito Santo de 1891.</p>
-            </article>
-
-            <article class="next-card">
-              <p class="eyebrow">Vezzoni · Divergencia</p>
-              <h3>Onde Luigia Orsola Cetto casou e faleceu</h3>
-              <p>Uma fonte secundaria diz casamento no Brasil em 1891 e obito na Italia, o que e incomum. Precisa de certidao primaria para resolver.</p>
-            </article>
-
-            <article class="next-card">
-              <p class="eyebrow">Vezzoni · Pista aberta</p>
-              <h3>"Proveniente da Argentina"</h3>
-              <p>O registro oficial de imigracao de Vincenzo traz essa observacao, ainda sem explicacao. Pode indicar passagem pela Argentina antes do embarque em Genova.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="section-inner">
-        <p>Pagina publica de visualizacao. O arquivo-fonte privado da pesquisa continua sendo memoria_genealogica_pompermayer_COMPLETA.md, com evidencias tecnicas registradas em pesquisa/evidencias.md.</p>
-      </div>
-    </footer>
-  </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Documento vivo: atualizado conforme novas certidões são obtidas. As fontes de cada dado estão linkadas nas evidências acima.</p>
+      <p>Pesquisa complementar da linha paterna Salarini/Pompermayer, fora do escopo deste processo: <a href="pesquisa-linha-paterna.html">pesquisa-linha-paterna.html</a>.</p>
+    </div>
+  </footer>
 </body>
 </html>
