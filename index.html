@@ -465,6 +465,77 @@
     .exhibit.text-only { display: flex; }
     .exhibit.text-only .exhibit-body { display: flex; flex-direction: column; justify-content: center; }
 
+    /* ---------- Document image viewer ---------- */
+    .image-viewer {
+      background: transparent;
+      border: 0;
+      color: var(--ink);
+      max-height: none;
+      max-width: none;
+      overflow: visible;
+      padding: 0;
+      width: min(1100px, calc(100% - 24px));
+    }
+
+    .image-viewer::backdrop {
+      background: rgba(10, 14, 11, .86);
+      backdrop-filter: blur(5px);
+    }
+
+    .image-viewer__frame {
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-radius: 12px;
+      box-shadow: 0 22px 64px rgba(0, 0, 0, .42);
+      display: grid;
+      gap: 10px;
+      max-height: calc(100dvh - 24px);
+      overflow: auto;
+      padding: clamp(10px, 2vw, 18px);
+      position: relative;
+    }
+
+    .image-viewer__image {
+      background: var(--surface-2);
+      border-radius: 8px;
+      height: auto;
+      margin: 0 auto;
+      max-height: calc(100dvh - 90px);
+      object-fit: contain;
+      width: auto;
+    }
+
+    .image-viewer__caption {
+      color: var(--muted);
+      font-size: 13px;
+      padding-inline-end: 56px;
+    }
+
+    .image-viewer__close {
+      align-items: center;
+      background: rgba(29, 37, 31, .92);
+      border: 1px solid rgba(255, 255, 255, .55);
+      border-radius: 999px;
+      color: #fff;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: var(--sans);
+      font-size: 28px;
+      height: 48px;
+      inset-block-start: 8px;
+      inset-inline-end: 8px;
+      justify-content: center;
+      line-height: 1;
+      padding: 0 0 3px;
+      position: absolute;
+      width: 48px;
+      z-index: 2;
+    }
+
+    .image-viewer__close:hover { background: var(--seal-strong); }
+
+    body.image-viewer-open { overflow: hidden; }
+
     @media (min-width: 640px) {
       .cover h1 { font-size: 58px; }
       .exhibits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -473,6 +544,7 @@
 
     @media print {
       .nav { display: none; }
+      .image-viewer { display: none; }
       body { background: #fff; color: #000; }
       .gen, .exhibit, .status-table, .pending-item, .context-box { box-shadow: none; }
       a { color: #000; text-decoration: underline; }
@@ -762,11 +834,74 @@
     </section>
   </main>
 
+  <dialog class="image-viewer" id="document-image-viewer" aria-labelledby="document-image-caption">
+    <figure class="image-viewer__frame">
+      <button class="image-viewer__close" type="button" aria-label="Fechar imagem">&times;</button>
+      <img class="image-viewer__image" alt="">
+      <figcaption class="image-viewer__caption" id="document-image-caption"></figcaption>
+    </figure>
+  </dialog>
+
   <footer>
     <div class="wrap">
       <p>Documento vivo: atualizado conforme novas certidões são obtidas. As fontes de cada dado estão linkadas nas evidências acima.</p>
       <p>Pesquisa complementar da linha paterna Salarini/Pompermayer, fora do escopo deste processo: <a href="pesquisa-linha-paterna.html">pesquisa-linha-paterna.html</a>.</p>
     </div>
   </footer>
+
+  <script>
+    (() => {
+      const viewer = document.querySelector('#document-image-viewer');
+      const viewerImage = viewer?.querySelector('.image-viewer__image');
+      const viewerCaption = viewer?.querySelector('.image-viewer__caption');
+      const closeButton = viewer?.querySelector('.image-viewer__close');
+      const imageExtension = /\.(?:avif|gif|jpe?g|png|webp)(?:[?#].*)?$/i;
+
+      if (!viewer || !viewerImage || !viewerCaption || !closeButton) return;
+
+      const describeDocument = (link) => {
+        const row = link.closest('tr');
+        const cell = link.closest('td');
+        const headers = row?.closest('table')?.querySelectorAll('thead th');
+        const columnHeading = cell && headers ? headers[cell.cellIndex]?.textContent.trim() : '';
+        const personCell = row?.querySelector('.who');
+        const person = personCell?.firstChild?.textContent?.trim();
+        const generation = link.closest('.gen')?.querySelector('h3')?.textContent?.trim();
+        const subject = person || generation || 'Documento genealógico';
+        const documentType = columnHeading || link.textContent.trim().replace(/\s+[—-]\s+obtido$/i, '');
+        return `${subject} — ${documentType}`;
+      };
+
+      document.querySelectorAll('#documentos a.status.ok[href], #linha a.status.ok[href]').forEach((link) => {
+        const href = link.getAttribute('href');
+        if (!href || !imageExtension.test(href)) return;
+
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const caption = describeDocument(link);
+          viewerImage.src = href;
+          viewerImage.alt = caption;
+          viewerCaption.textContent = caption;
+          document.body.classList.add('image-viewer-open');
+          viewer.showModal();
+        });
+      });
+
+      closeButton.addEventListener('click', () => viewer.close());
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && viewer.open) {
+          event.preventDefault();
+          viewer.close();
+        }
+      });
+      viewer.addEventListener('click', (event) => {
+        if (event.target === viewer) viewer.close();
+      });
+      viewer.addEventListener('close', () => {
+        document.body.classList.remove('image-viewer-open');
+        viewerImage.removeAttribute('src');
+      });
+    })();
+  </script>
 </body>
 </html>
